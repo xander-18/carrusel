@@ -1,12 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tienda de Zapatillas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <h1>Rama - chris</h1>
+    <header>
+        <nav>
+            <h1>Tienda de Zapatillas</h1>
+            <ul>
+                <li onclick="showCategory('hombre')">
+                    <img src="zapatilla.png" alt="Hombre" class="icono">
+                    Hombre
+                </li>
+                <li onclick="showCategory('mujer')">
+                    <img src="zapatilla.png" alt="Mujer" class="icono">
+                    Mujer
+                </li>
+            </ul>
+            
+            <div class="cart-icon" onclick="toggleCart()">
+                <img src="carrito-de-compras.png" alt="Carrito" class="cart-img">
+                <span class="cart-count">0</span>
+            </div>            
+        </nav>
+    </header>
+
+    <main>
+        <section class="products" id="products">
+            <!-- Productos se generan con JavaScript -->
+        </section>
+    </main>
+
+    <div class="cart" id="cart">
+        <h2>Carrito de Compras</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total" id="cart-total">Total: S/ 0</div>
+        <div class="payment-methods">
+            <button class="yape" onclick="processPayment('Yape')">Pagar con Yape</button>
+            <button class="bcp" onclick="processPayment('BCP')">Pagar con BCP</button>
+            <button class="plin" onclick="processPayment('Plin')">Pagar con Plin</button>
+        </div>
+        <button class="close-cart" onclick="toggleCart()">Cerrar</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
