@@ -1,174 +1,352 @@
-/* Reset y variables */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  :root {
-    --primary-color: #333;
-    --secondary-color: #fff;
-    --accent-color: #ff6600;
-    --font-family: 'Arial', sans-serif;
-  }
-  
-  body {
-    font-family: var(--font-family);
-    color: var(--primary-color);
-    background: var(--secondary-color);
-    line-height: 1.6;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .site-header {
-    background: var(--secondary-color);
-    padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .logo {
-    float: left;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-  }
-  
-  .main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .main-nav a {
-    text-decoration: none;
-    color: var(--primary-color);
-  }
-  
-  .cart-icon {
-    float: right;
-  }
-  
-  .hero {
-    background: url('../assets/hero-bg.jpg') center/cover no-repeat;
-    color: var(--secondary-color);
-    text-align: center;
-    padding: 4rem 0;
-  }
-  
-  .hero .btn {
-    margin-top: 1rem;
-  }
-  
-  .btn {
-    display: inline-block;
-    background: var(--accent-color);
-    color: var(--secondary-color);
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background 0.3s;
-  }
-  
-  .btn:hover {
-    background: #e65500;
-  }
-  
-  .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-  }
-  
-  .product-card {
-    border: 1px solid #eee;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 8px;
-    background: var(--secondary-color);
-  }
-  
-  .product-card img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  .product-card .price {
-    margin: 0.5rem 0;
-    font-weight: bold;
-    color: var(--accent-color);
-  }
-  
-  .site-footer {
-    background: #f8f8f8;
-    padding: 1rem 0;
-    text-align: center;
-    border-top: 1px solid #ddd;
-  }
-  
-  .site-footer .social {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-  
-  .site-footer .social img {
-    width: 24px;
-    height: 24px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.carousel {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-  }
-  
-  .carousel-inner {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .carousel-inner img {
-    min-width: 20%;
-    object-fit: cover;
-    display: block;
-  }
-  
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: #fff;
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
-  }
-  
-  .carousel-btn.prev {
-    left: 0.5rem;
-  }
-  
-  .carousel-btn.next {
-    right: 0.5rem;
-  }
-  
-  .carousel-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-  }
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  position: relative;
+}
 
-  
-  
-  
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos para el header */
+.site-header {
+  background-color: #222;
+  padding: 15px 0;
+  color: white;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.main-nav a:hover {
+  color: #f8c300;
+}
+
+.cart-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Estilos para la sección Productos */
+.product-carousel {
+  padding: 40px 0;
+  position: relative;
+}
+
+.carousel-inner {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.product-card {
+  flex: 0 0 250px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 10px 0;
+  padding: 0 15px;
+}
+
+.price {
+  font-weight: bold;
+  color: #e63946;
+  padding: 0 15px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Estilos para footer */
+.site-footer {
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.social img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Estilos para la sección Sobre Nosotros */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about-title {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #000;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  height: 400px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Panel de Administración */
+.admin-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  z-index: 99;
+  transition: right 0.3s ease;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.admin-panel.open {
+  right: 0;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.close-panel {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.admin-form {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.admin-products {
+  margin-top: 30px;
+}
+
+.admin-product-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-product-info {
+  flex: 1;
+}
+
+.admin-product-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.submit-btn {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.panel-title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 98;
+}
+
+.overlay.active {
+  display: block;
+}
