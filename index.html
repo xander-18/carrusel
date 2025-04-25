@@ -1,11 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Tienda de Zapatillas</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Estilos para la sección Sobre Nosotros */
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .about-title {
+      text-align: center;
+      margin-bottom: 50px;
+      color: #000;
+      font-size: 36px;
+      font-weight: bold;
+    }
+    
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .about-text h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    
+    .about-text p {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      height: 400px;
+      background-color: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
+<<<<<<< HEAD
     <h1>Rama - Maria</h1>
+=======
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">ZapaShop</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="cart-icon">
+        <a href="#"><img src="assets/cart.svg" alt="Carrito" /></a>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <!-- Sección Sobre Nosotros integrada -->
+  <section id="sobre-nosotros" class="about-container">
+    <h1 class="about-title">Sobre Nosotros</h1>
+    
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Nuestra Historia</h2>
+        <p>Bienvenidos a <strong>ZapaShop</strong>, tu destino definitivo para encontrar el calzado perfecto. Nuestra historia comenzó en 2018 con una simple pero poderosa visión: ofrecer zapatillas de alta calidad que combinen estilo, comodidad y precios accesibles.</p>
+        <p>Lo que comenzó como una pequeña tienda en línea se ha convertido en una marca reconocida con clientes satisfechos en todo el país. Nuestro viaje ha estado impulsado por la pasión por el calzado y el compromiso inquebrantable con la satisfacción del cliente.</p>
+        <p>Trabajamos directamente con fabricantes y marcas selectas para ofrecerte una colección cuidadosamente curada de zapatillas deportivas, casuales y de moda que se adaptan a todos los estilos y necesidades.</p>
+      </div>
+      <div class="about-image">
+        <img src="assets/fondo.jpg" alt="Nuestra tienda de zapatillas">
+      </div>
+    </div>
+  </section>
+
+  <section id="productos" class="product-carousel container">
+    <button class="carousel-btn prev">&#10094;</button>
+    <div class="carousel-inner">
+      <article class="product-card">
+        <img src="assets/zapatilla1.jpg" alt="Zapatilla Modelo A">
+        <h3>Modelo A</h3>
+        <p class="price">$75.00</p>
+        <button class="btn add-to-cart" data-product-id="1">Agregar al carrito</button>
+      </article>
+      <article class="product-card">
+        <img src="assets/zapatilla2.jpg" alt="Zapatilla Modelo B">
+        <h3>Modelo B</h3>
+        <p class="price">$85.00</p>
+        <button class="btn add-to-cart" data-product-id="2">Agregar al carrito</button>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/zapatilla3.jpg" alt="Zapatilla Modelo C">
+        <h3>Modelo C</h3>
+        <p class="price">$185.00</p>
+        <button class="btn add-to-cart" data-product-id="3">Agregar al carrito</button>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/zapatilla4.jpg" alt="Zapatilla Modelo D">
+        <h3>Modelo D</h3>
+        <p class="price">$55.00</p>
+        <button class="btn add-to-cart" data-product-id="4">Agregar al carrito</button>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/zapatilla5.jpg" alt="Zapatilla Modelo E">
+        <h3>Modelo E</h3>
+        <p class="price">$35.00</p>
+        <button class="btn add-to-cart" data-product-id="5">Agregar al carrito</button>
+      </article>
+    </div>
+    <button class="carousel-btn next">&#10095;</button>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 ZapaShop. Todos los derechos reservados.</p>
+      <ul class="social">
+        <li><a href="#"><img src="assets/facebook.svg" alt="Facebook" /></a></li>
+        <li><a href="#"><img src="assets/instagram.svg" alt="Instagram" /></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+>>>>>>> e87921f585c5e379af2baffe298943e10d8902ef
 </body>
 </html>
