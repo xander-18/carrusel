@@ -1,13 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Tienda de Zapatillas</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <h1>Hola soy Diego</h1>
-    <h2>trabajaremos grupalmente</h2>
-    <h3>fullstack</h3>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">ZapaShop</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="cart-icon">
+        <a href="#"><img src="assets/cart.svg" alt="Carrito" /></a>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Encuentra tu par perfecto</h2>
+      <p>Las mejores zapatillas deportivas al mejor precio.</p>
+      <a href="#productos" class="btn">Ver Productos</a>
+    </div>
+  </section>
+
+  <section id="productos" class="product-carousel container">
+    <button class="carousel-btn prev">&#10094;</button>
+    <div class="carousel-inner">
+      <article class="product-card">
+        <img src="assets/zapatilla1.jpg" alt="Zapatilla Modelo A">
+        <h3>Modelo A</h3>
+        <p class="price">$75.00</p>
+        <button class="btn add-to-cart" data-product-id="1">Agregar al carrito</button>
+      </article>
+      <article class="product-card">
+        <img src="assets/zapatilla2.jpg" alt="Zapatilla Modelo B">
+        <h3>Modelo B</h3>
+        <p class="price">$85.00</p>
+        <button class="btn add-to-cart" data-product-id="2">Agregar al carrito</button>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/zapatilla3.jpg" alt="Zapatilla Modelo C">
+        <h3>Modelo C</h3>
+        <p class="price">$185.00</p>
+        <button class="btn add-to-cart" data-product-id="2">Agregar al carrito</button>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/zapatilla4.jpg" alt="Zapatilla Modelo D">
+        <h3>Modelo D</h3>
+        <p class="price">$55.00</p>
+        <button class="btn add-to-cart" data-product-id="2">Agregar al carrito</button>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/zapatilla5.jpg" alt="Zapatilla Modelo E">
+        <h3>Modelo E</h3>
+        <p class="price">$35.00</p>
+        <button class="btn add-to-cart" data-product-id="2">Agregar al carrito</button>
+      </article>
+    </div>
+    <button class="carousel-btn next">&#10095;</button>
+  </section>
+  
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 ZapaShop. Todos los derechos reservados.</p>
+      <ul class="social">
+        <li><a href="#"><img src="assets/facebook.svg" alt="Facebook" /></a></li>
+        <li><a href="#"><img src="assets/instagram.svg" alt="Instagram" /></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
-</html> 
+</html>
