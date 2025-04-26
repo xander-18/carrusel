@@ -143,8 +143,7 @@ const products = [
       behavior: 'smooth'
     });
   }
-  
-  // Inicialización y Event Listeners
+
   document.addEventListener('DOMContentLoaded', () => {
     // Inicializar elementos DOM
     cartIcon = document.querySelector('.cart-icon');
