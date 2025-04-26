@@ -1,11 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Tienda de Zapatillas</title>
+  <link rel="stylesheet" href="style/index.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">ZapaShop</h1>
+      <nav class="main-nav">
+        <ul>  
+          <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="sobre-nosotros" class="about-container">
+    <h1 class="about-title">Sobre Nosotros</h1>
     
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Nuestra Historia</h2>
+        <p>Bienvenidos a <strong>ZapaShop</strong>, tu destino definitivo para encontrar el calzado perfecto. Nuestra historia comenzó en 2018 con una simple pero poderosa visión: ofrecer zapatillas de alta calidad que combinen estilo, comodidad y precios accesibles.</p>
+        <p>Lo que comenzó como una pequeña tienda en línea se ha convertido en una marca reconocida con clientes satisfechos en todo el país. Nuestro viaje ha estado impulsado por la pasión por el calzado y el compromiso inquebrantable con la satisfacción del cliente.</p>
+        <p>Trabajamos directamente con fabricantes y marcas selectas para ofrecerte una colección cuidadosamente curada de zapatillas deportivas, casuales y de moda que se adaptan a todos los estilos y necesidades.</p>
+      </div>
+      <div class="about-image">
+        <img src="assets/fondo.jpg" alt="Nuestra tienda de zapatillas">
+      </div>
+    </div>
+  </section>
+
+  <section id="productos" class="products-section">
+    <div class="container">
+      <h2 class="section-title">Nuestros Productos</h2>
+      <div class="products-grid">
+        <article class="product-card">
+          <div class="product-badge">Destacado</div>
+          <div class="product-image">
+            <img src="assets/AirJordan-1.jpg" alt="Zapatilla Air Jordan 1">
+          </div>
+          <div class="product-info">
+            <h3>Air Jordan 1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(4.5)</span>
+            </div>
+            <p class="price">$175.00</p>
+            <button class="btn add-to-cart" data-product-id="1" data-product-name="Air Jordan 1" data-product-price="175.00" data-product-image="assets/AirJordan-1.jpg">
+              <i class="fas fa-shopping-cart"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+        
+        <article class="product-card">
+          <div class="product-image">
+            <img src="assets/AirJordan2-13.jpg" alt="Zapatilla Air Jordan 2">
+          </div>
+          <div class="product-info">
+            <h3>Air Jordan 2</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(4.0)</span>
+            </div>
+            <p class="price">$185.00</p>
+            <button class="btn add-to-cart" data-product-id="2" data-product-name="Air Jordan 2" data-product-price="185.00" data-product-image="assets/AirJordan2-13.jpg">
+              <i class="fas fa-shopping-cart"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-badge new">Nuevo</div>
+          <div class="product-image">
+            <img src="assets/AirJordan4-13.jpg" alt="Zapatilla Air Jordan 4">
+          </div>
+          <div class="product-info">
+            <h3>Air Jordan 4</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(5.0)</span>
+            </div>
+            <p class="price">$195.00</p>
+            <button class="btn add-to-cart" data-product-id="3" data-product-name="Air Jordan 4" data-product-price="195.00" data-product-image="assets/AirJordan4-13.jpg">
+              <i class="fas fa-shopping-cart"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="assets/AirJordanF-1.jpg" alt="Zapatilla Air Jordan F">
+          </div>
+          <div class="product-info">
+            <h3>Air Jordan F</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(3.0)</span>
+            </div>
+            <p class="price">$155.00</p>
+            <button class="btn add-to-cart" data-product-id="4" data-product-name="Air Jordan F" data-product-price="155.00" data-product-image="assets/AirJordanF-1.jpg">
+              <i class="fas fa-shopping-cart"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-badge sale">Oferta</div>
+          <div class="product-image">
+            <img src="assets/AirJordanZarpado.jpg" alt="Zapatilla Air Jordan Zarpado">
+          </div>
+          <div class="product-info">
+            <h3>Air Jordan Zarpado</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="far fa-star"></i>
+              <span>(3.5)</span>
+            </div>
+            <p class="price"><span class="original-price">$160.00</span> $135.00</p>
+            <button class="btn add-to-cart" data-product-id="5" data-product-name="Air Jordan Zarpado" data-product-price="135.00" data-product-image="assets/AirJordanZarpado.jpg">
+              <i class="fas fa-shopping-cart"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="cart-icon">
+    <img src="assets/carrito.png" alt="Carrito" style="width:32px;height:32px;">
+    <i class="fas fa-shopping-cart"></i>
+
+    
+    <span id="cart-count">0</span>
+  </div>
+
+  <!-- Panel del carrito compacto -->
+  <div class="cart-overlay"></div>
+  <div class="cart-panel">
+    <div class="cart-header">
+      <h2><i class="fas fa-shopping-bag"></i> Tu Carrito</h2>
+      <button class="close-cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items">
+      <!-- Los items del carrito se generarán dinámicamente -->
+    </div>
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-price">$0.00</span>
+      </div>
+      <button class="checkout-btn"><i class="fas fa-credit-card"></i> Proceder al Pago</button>
+    </div>
+  </div>
+
+  <div class="product-added">
+    <i class="fas fa-check-circle"></i> Producto agregado al carrito
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 ZapaShop. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+  
+  <script src="js/main.js"></script>
+  <script src="js/addproduct.js"></script>
 </body>
 </html>
