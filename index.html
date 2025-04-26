@@ -4,167 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Tienda de Zapatillas</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<title>Tienda de Zapatillas</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    /* Estilos adicionales para el carrito */
-    .cart-dropdown {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      width: 350px;
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 15px;
-      display: none;
-      z-index: 1000;
-    }
-    
-    .cart-container {
-      position: relative;
-    }
-    
-    .cart-icon {
-      position: relative;
-      cursor: pointer;
-    }
-    
-    .cart-count {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      background: red;
-      color: white;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: bold;
-    }
-    
-    .cart-item {
-      display: flex;
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-    }
-    
-    .cart-item-image {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      margin-right: 10px;
-    }
-    
-    .cart-item-details {
-      flex-grow: 1;
-    }
-    
-    .cart-item-title {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    
-    .cart-quantity {
-      display: flex;
-      align-items: center;
-      margin-top: 5px;
-    }
-    
-    .quantity-btn {
-      background: #f1f1f1;
-      border: none;
-      width: 25px;
-      height: 25px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    
-    .quantity-input {
-      width: 40px;
-      text-align: center;
-      margin: 0 5px;
-      border: 1px solid #ddd;
-    }
-    
-    .remove-item {
-      color: red;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 12px;
-      margin-top: 5px;
-    }
-    
-    .cart-total {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 15px;
-      padding-top: 10px;
-      border-top: 1px solid #ddd;
-      font-weight: bold;
-    }
-    
-    .checkout-btn {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    
-    .empty-cart {
-      text-align: center;
-      padding: 20px 0;
-      color: #777;
-    }
-  </style>
+  <link rel="stylesheet" href="style/index.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <h1 class="logo">ZapaShop</h1>
       <nav class="main-nav">
-        <ul>
+        <ul>  
           <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
           <li><a href="#productos">Productos</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <div class="cart-container">
-        <div class="cart-icon" id="cart-icon">
-          <img src="assets/cart.svg" alt="Carrito" />
-          <span class="cart-count" id="cart-count">0</span>
-        </div>
-        <div class="cart-dropdown" id="cart-dropdown">
-          <h3>Tu Carrito</h3>
-          <div id="cart-items">
-            <!-- Los items del carrito se cargarán aquí dinámicamente -->
-            <div class="empty-cart" id="empty-cart">
-              Tu carrito está vacío
-            </div>
-          </div>
-          <div class="cart-total" id="cart-total-container" style="display: none;">
-            <span>Total:</span>
-            <span id="cart-total">$0.00</span>
-          </div>
-          <button class="checkout-btn" id="checkout-btn">Proceder al Pago</button>
-        </div>
-      </div>
     </div>
   </header>
 
-  <!-- Sección Sobre Nosotros integrada -->
   <section id="sobre-nosotros" class="about-container">
     <h1 class="about-title">Sobre Nosotros</h1>
     
@@ -181,599 +36,160 @@
     </div>
   </section>
 
-  <section id="productos" class="product-carousel container">
-    <button class="carousel-btn prev">&#10094;</button>
-    <div class="carousel-inner" id="products-container">
-      <!-- Los productos se cargarán dinámicamente desde JavaScript -->
+  <section id="productos" class="products-section">
+    <div class="container">
+      <h2 class="section-title">Nuestros Productos</h2>
+      <div class="products-grid">
+        <article class="product-card">
+          <div class="product-badge">Destacado</div>
+          <div class="product-image">
+            <img src="assets/AirJordan-1.jpg" alt="Zapatilla Air Jordan 1">
+          </div>
+          <div class="product-info">
+            <h3>Air Jordan 1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(4.5)</span>
+            </div>
+            <p class="price">$175.00</p>
+            <button class="btn add-to-cart" data-product-id="1" data-product-name="Air Jordan 1" data-product-price="175.00" data-product-image="assets/AirJordan-1.jpg">
+              <i class="fas fa-shopping-cart"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+        
+        <article class="product-card">
+          <div class="product-image">
+            <img src="assets/AirJordan2-13.jpg" alt="Zapatilla Air Jordan 2">
+          </div>
+          <div class="product-info">
+            <h3>Air Jordan 2</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(4.0)</span>
+            </div>
+            <p class="price">$185.00</p>
+            <button class="btn add-to-cart" data-product-id="2" data-product-name="Air Jordan 2" data-product-price="185.00" data-product-image="assets/AirJordan2-13.jpg">
+              <i class="fas fa-shopping-cart"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-badge new">Nuevo</div>
+          <div class="product-image">
+            <img src="assets/AirJordan4-13.jpg" alt="Zapatilla Air Jordan 4">
+          </div>
+          <div class="product-info">
+            <h3>Air Jordan 4</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(5.0)</span>
+            </div>
+            <p class="price">$195.00</p>
+            <button class="btn add-to-cart" data-product-id="3" data-product-name="Air Jordan 4" data-product-price="195.00" data-product-image="assets/AirJordan4-13.jpg">
+              <i class="fas fa-shopping-cart"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="assets/AirJordanF-1.jpg" alt="Zapatilla Air Jordan F">
+          </div>
+          <div class="product-info">
+            <h3>Air Jordan F</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(3.0)</span>
+            </div>
+            <p class="price">$155.00</p>
+            <button class="btn add-to-cart" data-product-id="4" data-product-name="Air Jordan F" data-product-price="155.00" data-product-image="assets/AirJordanF-1.jpg">
+              <i class="fas fa-shopping-cart"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-badge sale">Oferta</div>
+          <div class="product-image">
+            <img src="assets/AirJordanZarpado.jpg" alt="Zapatilla Air Jordan Zarpado">
+          </div>
+          <div class="product-info">
+            <h3>Air Jordan Zarpado</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="far fa-star"></i>
+              <span>(3.5)</span>
+            </div>
+            <p class="price"><span class="original-price">$160.00</span> $135.00</p>
+            <button class="btn add-to-cart" data-product-id="5" data-product-name="Air Jordan Zarpado" data-product-price="135.00" data-product-image="assets/AirJordanZarpado.jpg">
+              <i class="fas fa-shopping-cart"></i> Agregar al carrito
+            </button>
+          </div>
+        </article>
+      </div>
     </div>
-    <button class="carousel-btn next">&#10095;</button>
   </section>
+
+  <div class="cart-icon">
+    <img src="assets/carrito.png" alt="Carrito" style="width:32px;height:32px;">
+    <i class="fas fa-shopping-cart"></i>
+
+    
+    <span id="cart-count">0</span>
+  </div>
+
+  <!-- Panel del carrito compacto -->
+  <div class="cart-overlay"></div>
+  <div class="cart-panel">
+    <div class="cart-header">
+      <h2><i class="fas fa-shopping-bag"></i> Tu Carrito</h2>
+      <button class="close-cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items">
+      <!-- Los items del carrito se generarán dinámicamente -->
+    </div>
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-price">$0.00</span>
+      </div>
+      <button class="checkout-btn"><i class="fas fa-credit-card"></i> Proceder al Pago</button>
+    </div>
+  </div>
+
+  <div class="product-added">
+    <i class="fas fa-check-circle"></i> Producto agregado al carrito
+  </div>
 
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025 ZapaShop. Todos los derechos reservados.</p>
-      <ul class="social">
-        <li><a href="#"><img src="assets/facebook.svg" alt="Facebook" /></a></li>
-        <li><a href="#"><img src="assets/instagram.svg" alt="Instagram" /></a></li>
-      </ul>
     </div>
   </footer>
-
-  <!-- Botón para abrir panel de administración -->
-  <button class="admin-toggle" id="admin-toggle">+</button>
   
-  <!-- Overlay de fondo cuando el panel está abierto -->
-  <div class="overlay" id="overlay"></div>
   
-  <!-- Panel de administración -->
-  <div class="admin-panel" id="admin-panel">
-    <div class="panel-header">
-      <h2>Panel de Administración</h2>
-      <button class="close-panel" id="close-panel">&times;</button>
-    </div>
-    
-    <div class="admin-form">
-      <h3 class="panel-title">Agregar/Editar Producto</h3>
-      <form id="product-form">
-        <input type="hidden" id="product-id">
-        <div class="form-group">
-          <label for="product-name">Nombre del producto:</label>
-          <input type="text" id="product-name" required>
-        </div>
-        <div class="form-group">
-          <label for="product-price">Precio ($):</label>
-          <input type="number" id="product-price" step="0.01" min="0" required>
-        </div>
-        <div class="form-group">
-          <label for="product-image">URL de imagen:</label>
-          <input type="text" id="product-image" placeholder="assets/zapatilla1.jpg" required>
-        </div>
-        <button type="submit" class="submit-btn">Guardar Producto</button>
-      </form>
-    </div>
-    
-    <div class="admin-products">
-      <h3 class="panel-title">Productos Existentes</h3>
-      <div id="admin-products-list">
-        <!-- Lista de productos para administrar -->
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Datos iniciales de productos
-    let products = [
-      {
-        id: 1,
-        name: "Modelo A",
-        price: 75.00,
-        image: "assets/AirJordan-1.jpg"
-      },
-      {
-        id: 2,
-        name: "Modelo B",
-        price: 85.00,
-        image: "assets/AirJordan-1.jpg"
-      },
-      {
-        id: 3,
-        name: "Modelo C",
-        price: 185.00,
-        image: "assets/AirJordan-1.jpg"
-      },
-      {
-        id: 4,
-        name: "Modelo D",
-        price: 55.00,
-        image: "assets/AirJordan-1.jpg"
-      },
-      {
-        id: 5,
-        name: "Modelo E",
-        price: 35.00,
-        image: "assets/AirJordan-1.jpg"
-      }
-    ];
-    
-    // Array para almacenar los items del carrito
-    let cart = [];
-    
-    // Guardar en localStorage si está disponible
-    function saveProducts() {
-      if (window.localStorage) {
-        localStorage.setItem('zapashop-products', JSON.stringify(products));
-        console.log('Productos guardados en localStorage:', products);
-      }
-    }
-    
-    // Guardar carrito en localStorage
-    function saveCart() {
-      if (window.localStorage) {
-        localStorage.setItem('zapashop-cart', JSON.stringify(cart));
-        console.log('Carrito guardado en localStorage:', cart);
-      }
-    }
-    
-    // Cargar desde localStorage si existe
-    function loadProducts() {
-      if (window.localStorage && localStorage.getItem('zapashop-products')) {
-        try {
-          const loadedProducts = JSON.parse(localStorage.getItem('zapashop-products'));
-          if (Array.isArray(loadedProducts) && loadedProducts.length > 0) {
-            products = loadedProducts;
-            console.log('Productos cargados desde localStorage:', products);
-          }
-        } catch (error) {
-          console.error('Error al cargar productos desde localStorage:', error);
-        }
-      }
-    }
-    
-    // Cargar carrito desde localStorage
-    function loadCart() {
-      if (window.localStorage && localStorage.getItem('zapashop-cart')) {
-        try {
-          const loadedCart = JSON.parse(localStorage.getItem('zapashop-cart'));
-          if (Array.isArray(loadedCart)) {
-            cart = loadedCart;
-            console.log('Carrito cargado desde localStorage:', cart);
-            updateCartUI();
-          }
-        } catch (error) {
-          console.error('Error al cargar carrito desde localStorage:', error);
-        }
-      }
-    }
-    
-    // Cargar productos en el carrusel principal
-    function renderProducts() {
-      const container = document.getElementById('products-container');
-      container.innerHTML = '';
-      
-      if (products.length === 0) {
-        container.innerHTML = '<p style="text-align: center; width: 100%;">No hay productos disponibles.</p>';
-        return;
-      }
-      
-      products.forEach(product => {
-        const article = document.createElement('article');
-        article.className = 'product-card';
-        article.innerHTML = `
-          <img src="${product.image}" alt="${product.name}" onerror="this.src='/api/placeholder/250/150'">
-          <h3>${product.name}</h3>
-          <p class="price">$${product.price.toFixed(2)}</p>
-          <button class="btn add-to-cart" data-product-id="${product.id}">Agregar al carrito</button>
-        `;
-        container.appendChild(article);
-      });
-      
-      // Agregar event listeners a los botones de "Agregar al carrito"
-      document.querySelectorAll('.add-to-cart').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const productId = parseInt(this.getAttribute('data-product-id'));
-          addToCart(productId);
-        });
-      });
-    }
-    
-    // Función para agregar un producto al carrito
-    function addToCart(productId) {
-      const product = products.find(p => p.id === productId);
-      
-      if (!product) {
-        alert('Producto no encontrado');
-        return;
-      }
-      
-      // Verificar si el producto ya está en el carrito
-      const existingItem = cart.find(item => item.productId === productId);
-      
-      if (existingItem) {
-        // Incrementar la cantidad
-        existingItem.quantity += 1;
-      } else {
-        // Agregar nuevo item al carrito
-        cart.push({
-          productId: product.id,
-          name: product.name,
-          price: product.price,
-          image: product.image,
-          quantity: 1
-        });
-      }
-      
-      // Mostrar mensaje de éxito
-      const productName = product.name;
-      
-      // Crear y mostrar notificación temporal
-      const notification = document.createElement('div');
-      notification.className = 'notification';
-      notification.style.position = 'fixed';
-      notification.style.bottom = '20px';
-      notification.style.right = '20px';
-      notification.style.backgroundColor = '#4CAF50';
-      notification.style.color = 'white';
-      notification.style.padding = '15px';
-      notification.style.borderRadius = '4px';
-      notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
-      notification.style.zIndex = '2000';
-      notification.textContent = `"${productName}" agregado al carrito`;
-      
-      document.body.appendChild(notification);
-      
-      // Eliminar notificación después de 3 segundos
-      setTimeout(() => {
-        notification.style.opacity = '0';
-        notification.style.transition = 'opacity 0.5s ease';
-        setTimeout(() => {
-          document.body.removeChild(notification);
-        }, 500);
-      }, 3000);
-      
-      // Guardar carrito y actualizar UI
-      saveCart();
-      updateCartUI();
-    }
-    
-    // Función para actualizar cantidad de producto en el carrito
-    function updateCartItemQuantity(productId, quantity) {
-      const itemIndex = cart.findIndex(item => item.productId === productId);
-      
-      if (itemIndex === -1) return;
-      
-      // Si la cantidad es 0 o menos, eliminar el item
-      if (quantity <= 0) {
-        removeCartItem(productId);
-        return;
-      }
-      
-      // Actualizar cantidad
-      cart[itemIndex].quantity = quantity;
-      
-      // Guardar carrito y actualizar UI
-      saveCart();
-      updateCartUI();
-    }
-    
-    // Función para eliminar un item del carrito
-    function removeCartItem(productId) {
-      cart = cart.filter(item => item.productId !== productId);
-      
-      // Guardar carrito y actualizar UI
-      saveCart();
-      updateCartUI();
-    }
-    
-    // Calcular total del carrito
-    function calculateCartTotal() {
-      return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-    }
-    
-    // Actualizar la interfaz del carrito
-    function updateCartUI() {
-      const cartItems = document.getElementById('cart-items');
-      const cartCount = document.getElementById('cart-count');
-      const cartTotal = document.getElementById('cart-total');
-      const emptyCart = document.getElementById('empty-cart');
-      const cartTotalContainer = document.getElementById('cart-total-container');
-      
-      // Actualizar contador
-      const itemCount = cart.reduce((count, item) => count + item.quantity, 0);
-      cartCount.textContent = itemCount;
-      
-      // Mostrar/ocultar mensaje de carrito vacío
-      if (cart.length === 0) {
-        emptyCart.style.display = 'block';
-        cartTotalContainer.style.display = 'none';
-      } else {
-        emptyCart.style.display = 'none';
-        cartTotalContainer.style.display = 'flex';
-        
-        // Limpiar y volver a renderizar los items
-        cartItems.innerHTML = '';
-        
-        cart.forEach(item => {
-          const itemElement = document.createElement('div');
-          itemElement.className = 'cart-item';
-          itemElement.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" class="cart-item-image" onerror="this.src='/api/placeholder/60/60'">
-            <div class="cart-item-details">
-              <div class="cart-item-title">${item.name}</div>
-              <div class="cart-item-price">$${item.price.toFixed(2)}</div>
-              <div class="cart-quantity">
-                <button class="quantity-btn decrease" data-product-id="${item.productId}">-</button>
-                <input type="number" min="1" value="${item.quantity}" class="quantity-input" data-product-id="${item.productId}">
-                <button class="quantity-btn increase" data-product-id="${item.productId}">+</button>
-              </div>
-              <button class="remove-item" data-product-id="${item.productId}">Eliminar</button>
-            </div>
-          `;
-          cartItems.appendChild(itemElement);
-        });
-        
-        // Actualizar total
-        const total = calculateCartTotal();
-        cartTotal.textContent = `$${total.toFixed(2)}`;
-        
-        // Agregar event listeners a los botones de cantidad
-        document.querySelectorAll('.decrease').forEach(btn => {
-          btn.addEventListener('click', function() {
-            const productId = parseInt(this.getAttribute('data-product-id'));
-            const itemIndex = cart.findIndex(item => item.productId === productId);
-            if (itemIndex !== -1) {
-              updateCartItemQuantity(productId, cart[itemIndex].quantity - 1);
-            }
-          });
-        });
-        
-        document.querySelectorAll('.increase').forEach(btn => {
-          btn.addEventListener('click', function() {
-            const productId = parseInt(this.getAttribute('data-product-id'));
-            const itemIndex = cart.findIndex(item => item.productId === productId);
-            if (itemIndex !== -1) {
-              updateCartItemQuantity(productId, cart[itemIndex].quantity + 1);
-            }
-          });
-        });
-        
-        document.querySelectorAll('.quantity-input').forEach(input => {
-          input.addEventListener('change', function() {
-            const productId = parseInt(this.getAttribute('data-product-id'));
-            const quantity = parseInt(this.value);
-            if (!isNaN(quantity) && quantity >= 0) {
-              updateCartItemQuantity(productId, quantity);
-            }
-          });
-        });
-        
-        // Agregar event listeners a los botones de eliminar
-        document.querySelectorAll('.remove-item').forEach(btn => {
-          btn.addEventListener('click', function() {
-            const productId = parseInt(this.getAttribute('data-product-id'));
-            removeCartItem(productId);
-          });
-        });
-      }
-      
-      // Volver a agregar el mensaje de carrito vacío (podría haberse eliminado)
-      if (cart.length === 0 && !document.getElementById('empty-cart')) {
-        cartItems.innerHTML = '<div class="empty-cart" id="empty-cart">Tu carrito está vacío</div>';
-      }
-    }
-    
-    // Cargar productos en el panel admin
-    function renderAdminProducts() {
-      const container = document.getElementById('admin-products-list');
-      container.innerHTML = '';
-      
-      if (products.length === 0) {
-        container.innerHTML = '<p style="text-align: center;">No hay productos para administrar.</p>';
-        return;
-      }
-      
-      products.forEach(product => {
-        const div = document.createElement('div');
-        div.className = 'admin-product-item';
-        div.innerHTML = `
-          <div class="admin-product-info">
-            <strong>${product.name}</strong> - $${product.price.toFixed(2)}
-          </div>
-          <div class="admin-product-actions">
-            <button class="btn edit-btn" data-id="${product.id}">Editar</button>
-            <button class="btn delete-btn" data-id="${product.id}">Eliminar</button>
-          </div>
-        `;
-        container.appendChild(div);
-      });
-      
-      // Agregar event listeners a los botones de editar y eliminar
-      document.querySelectorAll('.edit-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          editProduct(this.getAttribute('data-id'));
-        });
-      });
-      
-      document.querySelectorAll('.delete-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          deleteProduct(this.getAttribute('data-id'));
-        });
-      });
-    }
-    
-    // Función para editar un producto
-    function editProduct(id) {
-      const product = products.find(p => p.id == id);
-      if (product) {
-        document.getElementById('product-id').value = product.id;
-        document.getElementById('product-name').value = product.name;
-        document.getElementById('product-price').value = product.price;
-        document.getElementById('product-image').value = product.image;
-        document.querySelector('.submit-btn').textContent = 'Actualizar Producto';
-        
-        // Scroll al formulario
-        document.getElementById('product-name').scrollIntoView({ behavior: 'smooth' });
-        
-        console.log('Editando producto:', product);
-      }
-    }
-    
-    // Función para eliminar un producto
-    function deleteProduct(id) {
-      if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
-        const productName = products.find(p => p.id == id)?.name || 'Desconocido';
-        products = products.filter(p => p.id != id);
-        saveProducts();
-        renderProducts();
-        renderAdminProducts();
-        
-        // También eliminar del carrito si está ahí
-        const inCart = cart.findIndex(item => item.productId == id);
-        if (inCart !== -1) {
-          cart.splice(inCart, 1);
-          saveCart();
-          updateCartUI();
-        }
-        
-        console.log(`Producto eliminado: ${productName} (ID: ${id})`);
-        alert(`Producto "${productName}" eliminado correctamente.`);
-      }
-    }
-    
-    // Función para generar ID único
-    function generateId() {
-      return products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
-    }
-    
-    // Inicializar la aplicación
-    document.addEventListener('DOMContentLoaded', function() {
-      // Cargar productos y carrito del localStorage
-      loadProducts();
-      loadCart();
-      renderProducts();
-      renderAdminProducts();
-      updateCartUI();
-      
-      // Manejar el envío del formulario
-      document.getElementById('product-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const productId = document.getElementById('product-id').value;
-        const name = document.getElementById('product-name').value.trim();
-        const price = parseFloat(document.getElementById('product-price').value);
-        const image = document.getElementById('product-image').value.trim();
-        
-        if (!name || isNaN(price) || price <= 0 || !image) {
-          alert('Por favor completa todos los campos correctamente.');
-          return;
-        }
-        
-        if (productId) {
-          // Actualizar producto existente
-          const index = products.findIndex(p => p.id == productId);
-          if (index !== -1) {
-            products[index] = {
-              id: parseInt(productId),
-              name,
-              price,
-              image
-            };
-            
-            // Actualizar también el producto en el carrito si existe
-            const cartItemIndex = cart.findIndex(item => item.productId == productId);
-            if (cartItemIndex !== -1) {
-              cart[cartItemIndex].name = name;
-              cart[cartItemIndex].price = price;
-              cart[cartItemIndex].image = image;
-              saveCart();
-              updateCartUI();
-            }
-            
-            console.log('Producto actualizado:', products[index]);
-            alert(`Producto "${name}" actualizado correctamente.`);
-          }
-        } else {
-          // Agregar nuevo producto
-          const newProduct = {
-            id: generateId(),
-            name,
-            price,
-            image
-          };
-          products.push(newProduct);
-          console.log('Nuevo producto agregado:', newProduct);
-          alert(`Producto "${name}" agregado correctamente.`);
-        }
-        
-        // Guardar y renderizar
-        saveProducts();
-        renderProducts();
-        renderAdminProducts();
-        
-        // Resetear formulario
-        this.reset();
-        document.getElementById('product-id').value = '';
-        document.querySelector('.submit-btn').textContent = 'Guardar Producto';
-      });
-      
-      // Manejar la apertura/cierre del panel de administración
-      document.getElementById('admin-toggle').addEventListener('click', function() {
-        document.getElementById('admin-panel').classList.add('open');
-        document.getElementById('overlay').classList.add('active');
-      });
-      
-      document.getElementById('close-panel').addEventListener('click', function() {
-        document.getElementById('admin-panel').classList.remove('open');
-        document.getElementById('overlay').classList.remove('active');
-        
-        // Limpiar el formulario al cerrar
-        document.getElementById('product-form').reset();
-        document.getElementById('product-id').value = '';
-        document.querySelector('.submit-btn').textContent = 'Guardar Producto';
-      });
-      
-      document.getElementById('overlay').addEventListener('click', function() {
-        document.getElementById('admin-panel').classList.remove('open');
-        document.getElementById('overlay').classList.remove('active');
-        
-        // Limpiar el formulario al cerrar
-        document.getElementById('product-form').reset();
-        document.getElementById('product-id').value = '';
-        document.querySelector('.submit-btn').textContent = 'Guardar Producto';
-      });
-      
-      // Manejar botones del carrusel
-      document.querySelector('.prev').addEventListener('click', function() {
-        document.querySelector('.carousel-inner').scrollBy({
-          left: -300,
-          behavior: 'smooth'
-        });
-      });
-      
-      document.querySelector('.next').addEventListener('click', function() {
-        document.querySelector('.carousel-inner').scrollBy({
-          left: 300,
-          behavior: 'smooth'
-        });
-      });
-      
-      // Manejar carrito desplegable
-      document.getElementById('cart-icon').addEventListener('click', function(e) {
-        e.stopPropagation();
-        const dropdown = document.getElementById('cart-dropdown');
-        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-      });
-      
-      // Cerrar carrito al hacer clic fuera
-      document.addEventListener('click', function(e) {
-        const dropdown = document.getElementById('cart-dropdown');
-        const cartIcon = document.getElementById('cart-icon');
-        
-        if (!dropdown.contains(e.target) && !cartIcon.contains(e.target)) {
-          dropdown.style.display = 'none';
-        }
-      });
-      
-      // Manejar botón de checkout
-      document.getElementById('checkout-btn').addEventListener('click', function() {
-        if (cart.length === 0) {
-          alert('Tu carrito está vacío');
-          return;
-        }
-        
-        const total = calculateCartTotal();
-        alert(`¡Gracias por tu compra! Total: $${total.toFixed(2)}\n\nEn una implementación real, aquí te redirigirían a una pasarela de pago.`);
-        
-        // Limpiar carrito después de la compra
-        cart = [];
-        saveCart();
-        updateCartUI();
-        
-        // Cerrar dropdown
-        document.getElementById('cart-dropdown').style.display = 'none';
-      });
-      
-      console.log('Aplicación ZapaShop inicializada correctamente');
-    });
-  </script>
+  <script src="js/main.js"></script>
+  <script src="js/addproduct.js"></script>
 </body>
 </html>

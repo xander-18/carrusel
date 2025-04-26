@@ -6,33 +6,29 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Se pulsó añadir al carrito: producto ${id}`);
       });
     });
-  
-    const nav = document.querySelector('.main-nav');
-  });
 
-const carousels = document.querySelectorAll('.carousel');
+    // Carrusel
+    const carousel = document.querySelector('.product-carousel');
+    if (carousel) {
+      const inner = carousel.querySelector('.carousel-inner');
+      const slides = inner.children;
+      let index = 0;
 
-carousels.forEach(carousel => {
-  const inner = carousel.querySelector('.carousel-inner');
-  const slides = inner.children;
-  let index = 0;
+      const prevBtn = carousel.querySelector('.carousel-btn.prev');
+      const nextBtn = carousel.querySelector('.carousel-btn.next');
 
-  const prevBtn = carousel.querySelector('.carousel-btn.prev');
-  const nextBtn = carousel.querySelector('.carousel-btn.next');
+      function update() {
+        inner.style.transform = `translateX(-${index * 100}%)`;
+      }
 
-  function update() {
-    inner.style.transform = `translateX(-${index * 100}%)`;
-  }
+      prevBtn.addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
+        update();
+      });
 
-  prevBtn.addEventListener('click', () => {
-    index = (index - 1 + slides.length) % slides.length;
-    update();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    index = (index + 1) % slides.length;
-    update();
-  });
+      nextBtn.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        update();
+      });
+    }
 });
-
-  
