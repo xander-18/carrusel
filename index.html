@@ -1,190 +1,380 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Tienda de Zapatillas</title>
-  <link rel="stylesheet" href="style/index.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Elite - Zapatillas Exclusivas</title>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="logo">ZapaShop</h1>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-          <li><a href="#productos">Productos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <section id="sobre-nosotros" class="about-container">
-    <h1 class="about-title">Sobre Nosotros</h1>
-
-    <div class="about-content">
-      <div class="about-text">
-        <h2>Nuestra Historia</h2>
-        <p>Bienvenidos a <strong>ZapaShop</strong>, tu destino definitivo para encontrar el calzado perfecto. Nuestra historia comenzó en 2018 con una simple pero poderosa visión: ofrecer zapatillas de alta calidad que combinen estilo, comodidad y precios accesibles.</p>
-        <p>Lo que comenzó como una pequeña tienda en línea se ha convertido en una marca reconocida con clientes satisfechos en todo el país. Nuestro viaje ha estado impulsado por la pasión por el calzado y el compromiso inquebrantable con la satisfacción del cliente.</p>
-        <p>Trabajamos directamente con fabricantes y marcas selectas para ofrecerte una colección cuidadosamente curada de zapatillas deportivas, casuales y de moda que se adaptan a todos los estilos y necesidades.</p>
-      </div>
-      <div class="about-image">
-        <img src="assets/fondo.jpg" alt="Nuestra tienda de zapatillas">
-      </div>
-    </div>
-  </section>
-
-  <section id="productos" class="products-section">
-    <div class="container">
-      <h2 class="section-title">Nuestros Productos</h2>
-      <div class="products-grid">
-        <article class="product-card">
-          <div class="product-badge">Destacado</div>
-          <div class="product-image">
-            <img src="assets/AirJordan-1.jpg" alt="Zapatilla Air Jordan 1">
-          </div>
-          <div class="product-info">
-            <h3>Air Jordan 1</h3>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(4.5)</span>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>JORDAN<span>ELITE</span></h1>
             </div>
-            <p class="price">$175.00</p>
-            <button class="btn add-to-cart" data-product-id="1" data-product-name="Air Jordan 1" data-product-price="175.00" data-product-image="assets/AirJordan-1.jpg">
-              <i class="fas fa-shopping-cart"></i> Agregar al carrito
-            </button>
-          </div>
-        </article>
-        
-        <article class="product-card">
-          <div class="product-image">
-            <img src="assets/AirJordan2-13.jpg" alt="Zapatilla Air Jordan 2">
-          </div>
-          <div class="product-info">
-            <h3>Air Jordan 2</h3>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(4.0)</span>
+            <nav>
+                <ul>
+                    <li><a href="#nosotros" class="nav-link active">Nosotros</a></li>
+                    <li><a href="#productos" class="nav-link">Productos</a></li>
+                    <li><a href="#contactanos" class="nav-link">Contáctanos</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <span class="cart-count">0</span>
+                <i class="fas fa-shopping-cart" id="cart-btn"></i>
             </div>
-            <p class="price">$185.00</p>
-            <button class="btn add-to-cart" data-product-id="2" data-product-name="Air Jordan 2" data-product-price="185.00" data-product-image="assets/AirJordan2-13.jpg">
-              <i class="fas fa-shopping-cart"></i> Agregar al carrito
-            </button>
-          </div>
-        </article>
+        </div>
+    </header>
 
-        <article class="product-card">
-          <div class="product-badge new">Nuevo</div>
-          <div class="product-image">
-            <img src="assets/AirJordan4-13.jpg" alt="Zapatilla Air Jordan 4">
-          </div>
-          <div class="product-info">
-            <h3>Air Jordan 4</h3>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(5.0)</span>
+    <main>
+        <section id="nosotros" class="section active">
+            <div class="container">
+                <div class="nosotros-content">
+                    <div class="nosotros-text">
+                        <h2>NUESTRA HISTORIA</h2>
+                        <p>Jordan Elite nació en 2015 con una misión clara: traer las mejores y más exclusivas zapatillas Jordan al mercado local. Fundada por apasionados del baloncesto y coleccionistas de sneakers, nuestra tienda se ha convertido en el destino preferido para los verdaderos fanáticos de la cultura Jordan.</p>
+                        <p>Cada par de zapatillas que ofrecemos ha sido cuidadosamente seleccionado, garantizando autenticidad y calidad en cada detalle. No solo vendemos calzado, creamos una experiencia para los amantes del estilo y la exclusividad.</p>
+                    </div>
+                    <div class="nosotros-image">
+                        <div class="video-wrapper">
+                          <video
+                            class="nosotros-video"
+                            src="videos/jordan_historia.mp4"
+                            autoplay muted loop playsinline webkit-playsinline
+                            poster="assets/video-poster.jpg"
+                          >
+                            Tu navegador no soporta reproducción de video.
+                          </video>
+                        </div>
+                      </div>
+                </div>
             </div>
-            <p class="price">$195.00</p>
-            <button class="btn add-to-cart" data-product-id="3" data-product-name="Air Jordan 4" data-product-price="195.00" data-product-image="assets/AirJordan4-13.jpg">
-              <i class="fas fa-shopping-cart"></i> Agregar al carrito
-            </button>
-          </div>
-        </article>
+        </section>
 
-        <article class="product-card">
-          <div class="product-image">
-            <img src="assets/AirJordanF-1.jpg" alt="Zapatilla Air Jordan F">
-          </div>
-          <div class="product-info">
-            <h3>Air Jordan F</h3>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(3.0)</span>
+        <section id="productos" class="section">
+            <div class="container">
+                <h2>NUESTRA COLECCIÓN</h2>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/AirJordan-1.jpg" alt="Air Jordan 1 Retro High">
+                            </div>
+                            <div class="product-info">
+                                <h3>Air Jordan 1</h3>
+                                <p>Retro High OG "Chicago"</p>
+                                <span class="price">$189.99</span>
+                                <button class="add-to-cart" data-id="1" data-name="Air Jordan 1 Retro High OG Chicago" data-price="189.99" data-image="assets/AirJordan-1.jpg">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/AirJordan2-13.jpg" alt="Air Jordan 4 Retro">
+                            </div>
+                            <div class="product-info">
+                                <h3>Air Jordan 4</h3>
+                                <p>Retro "Fire Red"</p>
+                                <span class="price">$209.99</span>
+                                <button class="add-to-cart" data-id="2" data-name="Air Jordan 4 Retro Fire Red" data-price="209.99" data-image="assets/AirJordan2-13.jpg">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/AirJordan3-13.jpg" alt="Air Jordan 11 Retro">
+                            </div>
+                            <div class="product-info">
+                                <h3>Air Jordan 11</h3>
+                                <p>Retro "Concord"</p>
+                                <span class="price">$229.99</span>
+                                <button class="add-to-cart" data-id="3" data-name="Air Jordan 11 Retro Concord" data-price="229.99" data-image="assets/AirJordan3-13.jpg">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/AirJordan4-13.jpg" alt="Air Jordan 3 Retro">
+                            </div>
+                            <div class="product-info">
+                                <h3>Air Jordan 3</h3>
+                                <p>Retro "Black Cement"</p>
+                                <span class="price">$199.99</span>
+                                <button class="add-to-cart" data-id="4" data-name="Air Jordan 3 Retro Black Cement" data-price="199.99" data-image="assets/AirJordan4-13.jpg">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/AirJordan4.jpg" alt="Air Jordan 6 Retro">
+                            </div>
+                            <div class="product-info">
+                                <h3>Air Jordan 6</h3>
+                                <p>Retro "Infrared"</p>
+                                <span class="price">$219.99</span>
+                                <button class="add-to-cart" data-id="5" data-name="Air Jordan 6 Retro Infrared" data-price="219.99" data-image="assets/AirJordan4.jpg">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/AirJordanZarpado.jpg" alt="Air Jordan 7">
+                            </div>
+                            <div class="product-info">
+                                <h3>Air Jordan 7</h3>
+                                <p>Retro</p>
+                                <span class="price">$350.00</span>
+                                <button class="add-to-cart" data-id="6" data-name="Air Jordan 7" data-price="350.00" data-image="assets/AirJordanZarpado.jpg">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
             </div>
-            <p class="price">$155.00</p>
-            <button class="btn add-to-cart" data-product-id="4" data-product-name="Air Jordan F" data-product-price="155.00" data-product-image="assets/AirJordanF-1.jpg">
-              <i class="fas fa-shopping-cart"></i> Agregar al carrito
-            </button>
-          </div>
-        </article>
+        </section>
 
-        <article class="product-card">
-          <div class="product-badge sale">Oferta</div>
-          <div class="product-image">
-            <img src="assets/AirJordanZarpado.jpg" alt="Zapatilla Air Jordan Zarpado">
-          </div>
-          <div class="product-info">
-            <h3>Air Jordan Zarpado</h3>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <i class="far fa-star"></i>
-              <span>(3.5)</span>
+        <div id="cart-sidebar" class="cart-sidebar">
+            <div class="cart-header">
+                <h3>Tu Carrito</h3>
+                <button id="close-cart" title="Cerrar carrito"><i class="fas fa-times"></i></button>
             </div>
-            <p class="price"><span class="original-price">$160.00</span> $135.00</p>
-            <button class="btn add-to-cart" data-product-id="5" data-product-name="Air Jordan Zarpado" data-product-price="135.00" data-product-image="assets/AirJordanZarpado.jpg">
-              <i class="fas fa-shopping-cart"></i> Agregar al carrito
-            </button>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+            <div class="cart-items">
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">$0.00</span>
+                </div>
+                <button id="proceed-to-checkout" class="btn-primary">Continuar</button>
+            </div>
+        </div>
 
-  <div class="cart-icon">
-    <img src="assets/carrito.png" alt="Carrito" class="icon-carrito">
-    <i class="fas fa-shopping-cart"></i>
+        <div id="payment-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Finalizar Compra</h3>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="payment-steps">
+                        <div class="step active" data-step="delivery">
+                            <div class="step-number">1</div>
+                            <div class="step-title">Entrega</div>
+                        </div>
+                        <div class="step" data-step="payment">
+                            <div class="step-number">2</div>
+                            <div class="step-title">Pago</div>
+                        </div>
+                        <div class="step" data-step="confirmation">
+                            <div class="step-number">3</div>
+                            <div class="step-title">Confirmación</div>
+                        </div>
+                    </div>
 
-    <span id="cart-count">0</span>
-  </div>
+                    <div class="payment-form" id="delivery-form">
+                        <h4>Método de entrega</h4>
+                        <div class="form-group">
+                            <label>
+                                <input type="radio" name="delivery-method" value="delivery" checked>
+                                Delivery a domicilio
+                            </label>
+                            <label>
+                                <input type="radio" name="delivery-method" value="pickup">
+                                Recojo en tienda
+                            </label>
+                        </div>
+                        <div id="delivery-address">
+                            <h4>Datos de entrega</h4>
+                            <div class="form-group">
+                                <label for="name">Nombre completo</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Dirección</label>
+                                <input type="text" id="address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">Ciudad</label>
+                                <input type="text" id="city" required>
+                            </div>
+                        </div>
+                        <div id="pickup-store">
+                            <h4>Selecciona la tienda</h4>
+                            <div class="form-group">
+                                <label for="store">Tienda</label>
+                                <select id="store">
+                                    <option value="store1">Tienda Central - Av. Principal 123</option>
+                                    <option value="store2">Tienda Norte - Plaza Mayor 456</option>
+                                    <option value="store3">Tienda Sur - Centro Comercial Elite</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn-primary next-step">Continuar</button>
+                    </div>
 
-  <div class="cart-overlay"></div>
-  <div class="cart-panel">
-    <div class="cart-header">
-      <h2><i class="fas fa-shopping-bag"></i> Tu Carrito</h2>
-      <button class="close-cart" title="Cerrar carrito"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="cart-items">
-    </div>
-    <div class="cart-summary">
-      <div class="cart-total">
-        <span>Total:</span>
-        <span id="cart-total-price">$0.00</span>
-      </div>
-      <button class="checkout-btn"><i class="fas fa-credit-card"></i> Proceder al Pago</button>
-    </div>
-  </div>
+                    <div class="payment-form" id="payment-form">
+                        <h4>Método de pago</h4>
+                        <div class="payment-methods">
+                            <div class="payment-method active" data-method="card">
+                                <i class="far fa-credit-card"></i>
+                                <span>Tarjeta</span>
+                            </div>
+                            <div class="payment-method" data-method="yape">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Yape</span>
+                            </div>
+                            <div class="payment-method" data-method="transfer">
+                                <i class="fas fa-university"></i>
+                                <span>Transferencia</span>
+                            </div>
+                        </div>
 
-  <div class="product-added">
-    <i class="fas fa-check-circle"></i> Producto agregado al carrito
-  </div>
+                        <div class="payment-method-form" id="card-form">
+                            <div class="form-group">
+                                <label for="card-number">Número de tarjeta</label>
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-expiry">Vencimiento (MM/AA)</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-cvv">CVV</label>
+                                    <input type="text" id="card-cvv" placeholder="123" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-name">Nombre en la tarjeta</label>
+                                <input type="text" id="card-name">
+                            </div>
+                        </div>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 ZapaShop. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-  <script src="js/main.js"></script>
-  <script src="js/addproduct.js"></script>
+                        <div class="payment-method-form" id="yape-form">
+                            <div class="yape-qr">
+                                <img src="assets/qr_yape.jpeg" alt="Código QR Yape">
+                            </div>
+                            <p>Escanea el código QR con tu app de Yape o envía el pago al número: 944-541-475</p>
+                            <div class="form-group">
+                                <label for="yape-confirmation">Número de operación</label>
+                                <input type="text" id="yape-confirmation">
+                            </div>
+                        </div>
+
+                        <div class="payment-method-form" id="transfer-form">
+                            <div class="bank-details">
+                                <p><strong>Banco:</strong> BBVA</p>
+                                <p><strong>Cuenta:</strong> 001-789456-123-00</p>
+                                <p><strong>Titular:</strong> Jordan Elite S.A.C.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="transfer-confirmation">Número de operación</label>
+                                <input type="text" id="transfer-confirmation">
+                            </div>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button class="btn-secondary prev-step">Volver</button>
+                            <button class="btn-primary next-step">Continuar</button>
+                        </div>
+                    </div>
+
+                    <div class="payment-form" id="confirmation-form">
+                        <h4>Resumen de compra</h4>
+                        <div class="order-summary">
+                            <div class="summary-items">
+                            </div>
+                            <div class="summary-total">
+                                <div class="summary-row">
+                                    <span>Subtotal</span>
+                                    <span class="summary-subtotal">$0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Envío</span>
+                                    <span class="summary-shipping">$5.00</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Total</span>
+                                    <span class="summary-total-amount">$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button class="btn-secondary prev-step">Volver</button>
+                            <button id="complete-purchase" class="btn-primary">Pagar ahora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading-modal" class="modal">
+            <div class="modal-content loading-content">
+                <div class="loader"></div>
+                <p>Procesando tu pago...</p>
+            </div>
+        </div>
+
+        <div id="success-modal" class="modal">
+            <div class="modal-content success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>¡Compra realizada con éxito!</h3>
+                <p>Gracias por tu compra. Hemos enviado los detalles a tu correo electrónico.</p>
+                <button id="continue-shopping" class="btn-primary">Seguir comprando</button>
+            </div>
+        </div>
+
+        <div id="modal-overlay"></div>
+    </main>
+
+    <footer id="contactanos" class="section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>JORDAN<span>ELITE</span></h3>
+                    <p>Tu tienda exclusiva de zapatillas Jordan. Ofrecemos los modelos más buscados con garantía de autenticidad.</p>
+                    <div class="contact-info">
+                        <div><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad</div>
+                        <div><i class="fas fa-phone"></i> (01) 123-4567</div>
+                        <div><i class="fas fa-envelope"></i> info@jordanelite.com</div>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section social">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Suscríbete a nuestro newsletter</h4>
+                        <form>
+                            <input type="email" placeholder="Tu correo electrónico">
+                            <button type="submit" class="btn-primary">Suscribirse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jordan Elite. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
