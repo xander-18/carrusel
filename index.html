@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/svg" href="assets/logo.jpg">
 </head>
 <body>
+    <!-- <audio src="assets/audio/beat.mp3" autoplay loop hidden></audio> -->
+    <audio id="background-music" src="assets/audio/beat.mp3" loop hidden></audio>
+
     <header>
         <div class="container header-content">
             <div class="logo">
@@ -30,105 +35,358 @@
 
     <main>
         <section id="nosotros" class="section active">
+            <div class="video-background">
+                <video autoplay muted loop playsinline webkit-playsinline poster="assets/video-poster.jpg">
+                    <source src="videos/jordan_historia.mp4" type="video/mp4">
+                    Tu navegador no soporta reproducción de video.
+                </video>
+                <div class="overlay"></div>
+            </div>
             <div class="container">
                 <div class="nosotros-content">
                     <div class="nosotros-text">
-                        <h2>NUESTRA HISTORIA</h2>
+                        <h2 class="glow-text">NUESTRA HISTORIA</h2>
                         <p>Jordan Elite nació en 2015 con una misión clara: traer las mejores y más exclusivas zapatillas Jordan al mercado local. Fundada por apasionados del baloncesto y coleccionistas de sneakers, nuestra tienda se ha convertido en el destino preferido para los verdaderos fanáticos de la cultura Jordan.</p>
                         <p>Cada par de zapatillas que ofrecemos ha sido cuidadosamente seleccionado, garantizando autenticidad y calidad en cada detalle. No solo vendemos calzado, creamos una experiencia para los amantes del estilo y la exclusividad.</p>
                     </div>
-                    <div class="nosotros-image">
-                        <div class="video-wrapper">
-                          <video
-                            class="nosotros-video"
-                            src="videos/jordan_historia.mp4"
-                            autoplay muted loop playsinline webkit-playsinline
-                            poster="assets/video-poster.jpg"
-                          >
-                            Tu navegador no soporta reproducción de video.
-                          </video>
-                        </div>
-                      </div>
                 </div>
             </div>
         </section>
 
         <section id="productos" class="section">
             <div class="container">
-                <h2>NUESTRA COLECCIÓN</h2>
+                <!-- Mantenemos el título con los efectos visuales -->
+                <div class="wow-title-container">
+                    <h2 class="wow-title">NUESTRA <span class="ultra-glow">COLECCIÓN</span> ELITE</h2>
+                    <div class="title-badges">
+                        <span class="badge premium-badge">PREMIUM</span>
+                        <span class="badge exclusive-badge">EXCLUSIVO</span>
+                    </div>
+                </div>
+        
+                <!-- Mantenemos los efectos visuales existentes -->
+                <div class="visual-effects">
+                    <div class="spotlight spotlight-left"></div>
+                    <div class="spotlight spotlight-right"></div>
+                    <div class="floating-particles"></div>
+                </div>
+        
+                <!-- Añadimos un menú de categorías -->
+                <div class="product-categories">
+                    <button class="category-btn active" data-category="all">Todos</button>
+                    <button class="category-btn" data-category="retro">Retro</button>
+                    <button class="category-btn" data-category="performance">Performance</button>
+                    <button class="category-btn" data-category="limited">Edición Limitada</button>
+                </div>
+        
+                <!-- Añadimos filtros rápidos -->
+                <div class="quick-filters">
+                    <div class="filter-group">
+                        <span class="filter-label">Ordenar por:</span>
+                        <select id="sort-products">
+                            <option value="popular">Popularidad</option>
+                            <option value="newest">Más recientes</option>
+                            <option value="price-low">Precio: Menor a Mayor</option>
+                            <option value="price-high">Precio: Mayor a Menor</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Mostrar:</span>
+                        <div class="view-options">
+                            <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                            <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Mantenemos el carrusel existente pero con productos mejorados -->
                 <div class="carousel-container">
                     <div class="carousel">
-                        <div class="product-card">
+                        <!-- Air Jordan 1 -->
+                        <div class="product-card" data-category="retro">
+                            <div class="product-badge bestseller">TOP VENTAS</div>
                             <div class="product-image">
                                 <img src="assets/AirJordan-1.jpg" alt="Air Jordan 1 Retro High">
+                                <div class="product-hover">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Vista rápida</button>
+                                </div>
                             </div>
                             <div class="product-info">
                                 <h3>Air Jordan 1</h3>
                                 <p>Retro High OG "Chicago"</p>
+                                <div class="product-details">
+                                    <div class="color-options">
+                                        <span class="color-dot red" title="Rojo"></span>
+                                        <span class="color-dot black" title="Negro"></span>
+                                        <span class="color-dot white" title="Blanco"></span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span class="rating-count">(124)</span>
+                                    </div>
+                                </div>
                                 <span class="price">$189.99</span>
                                 <button class="add-to-cart" data-id="1" data-name="Air Jordan 1 Retro High OG Chicago" data-price="189.99" data-image="assets/AirJordan-1.jpg">Agregar al carrito</button>
                             </div>
                         </div>
-                        <div class="product-card">
+        
+                        <!-- Air Jordan 4 -->
+                        <div class="product-card" data-category="retro">
                             <div class="product-image">
                                 <img src="assets/AirJordan2-13.jpg" alt="Air Jordan 4 Retro">
+                                <div class="product-hover">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Vista rápida</button>
+                                </div>
                             </div>
                             <div class="product-info">
                                 <h3>Air Jordan 4</h3>
                                 <p>Retro "Fire Red"</p>
+                                <div class="product-details">
+                                    <div class="color-options">
+                                        <span class="color-dot white" title="Blanco"></span>
+                                        <span class="color-dot red" title="Rojo"></span>
+                                        <span class="color-dot black" title="Negro"></span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span class="rating-count">(98)</span>
+                                    </div>
+                                </div>
                                 <span class="price">$209.99</span>
                                 <button class="add-to-cart" data-id="2" data-name="Air Jordan 4 Retro Fire Red" data-price="209.99" data-image="assets/AirJordan2-13.jpg">Agregar al carrito</button>
                             </div>
                         </div>
-                        <div class="product-card">
+        
+                        <!-- Air Jordan 11 -->
+                        <div class="product-card" data-category="retro">
+                            <div class="product-badge new">NUEVO</div>
                             <div class="product-image">
                                 <img src="assets/AirJordan3-13.jpg" alt="Air Jordan 11 Retro">
+                                <div class="product-hover">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Vista rápida</button>
+                                </div>
                             </div>
                             <div class="product-info">
                                 <h3>Air Jordan 11</h3>
                                 <p>Retro "Concord"</p>
+                                <div class="product-details">
+                                    <div class="color-options">
+                                        <span class="color-dot black" title="Negro"></span>
+                                        <span class="color-dot white" title="Blanco"></span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="rating-count">(156)</span>
+                                    </div>
+                                </div>
                                 <span class="price">$229.99</span>
                                 <button class="add-to-cart" data-id="3" data-name="Air Jordan 11 Retro Concord" data-price="229.99" data-image="assets/AirJordan3-13.jpg">Agregar al carrito</button>
                             </div>
                         </div>
-                        <div class="product-card">
+        
+                        <!-- Air Jordan 3 -->
+                        <div class="product-card" data-category="retro">
                             <div class="product-image">
                                 <img src="assets/AirJordan4-13.jpg" alt="Air Jordan 3 Retro">
+                                <div class="product-hover">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Vista rápida</button>
+                                </div>
                             </div>
                             <div class="product-info">
                                 <h3>Air Jordan 3</h3>
                                 <p>Retro "Black Cement"</p>
+                                <div class="product-details">
+                                    <div class="color-options">
+                                        <span class="color-dot black" title="Negro"></span>
+                                        <span class="color-dot gray" title="Gris"></span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                        <span class="rating-count">(87)</span>
+                                    </div>
+                                </div>
                                 <span class="price">$199.99</span>
                                 <button class="add-to-cart" data-id="4" data-name="Air Jordan 3 Retro Black Cement" data-price="199.99" data-image="assets/AirJordan4-13.jpg">Agregar al carrito</button>
                             </div>
                         </div>
-                        <div class="product-card">
+        
+                        <!-- Air Jordan 6 -->
+                        <div class="product-card" data-category="performance">
                             <div class="product-image">
                                 <img src="assets/AirJordan4.jpg" alt="Air Jordan 6 Retro">
+                                <div class="product-hover">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Vista rápida</button>
+                                </div>
                             </div>
                             <div class="product-info">
                                 <h3>Air Jordan 6</h3>
                                 <p>Retro "Infrared"</p>
+                                <div class="product-details">
+                                    <div class="color-options">
+                                        <span class="color-dot black" title="Negro"></span>
+                                        <span class="color-dot red" title="Rojo"></span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span class="rating-count">(112)</span>
+                                    </div>
+                                </div>
                                 <span class="price">$219.99</span>
                                 <button class="add-to-cart" data-id="5" data-name="Air Jordan 6 Retro Infrared" data-price="219.99" data-image="assets/AirJordan4.jpg">Agregar al carrito</button>
                             </div>
                         </div>
-                        <div class="product-card">
+        
+                        <!-- Air Jordan 7 -->
+                        <div class="product-card" data-category="limited">
+                            <div class="product-badge limited">EDICIÓN LIMITADA</div>
                             <div class="product-image">
                                 <img src="assets/AirJordanZarpado.jpg" alt="Air Jordan 7">
+                                <div class="product-hover">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Vista rápida</button>
+                                </div>
                             </div>
                             <div class="product-info">
                                 <h3>Air Jordan 7</h3>
-                                <p>Retro</p>
+                                <p>Retro "Olympic" Limited Edition</p>
+                                <div class="product-details">
+                                    <div class="color-options">
+                                        <span class="color-dot white" title="Blanco"></span>
+                                        <span class="color-dot blue" title="Azul"></span>
+                                        <span class="color-dot red" title="Rojo"></span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="rating-count">(74)</span>
+                                    </div>
+                                </div>
                                 <span class="price">$350.00</span>
-                                <button class="add-to-cart" data-id="6" data-name="Air Jordan 7" data-price="350.00" data-image="assets/AirJordanZarpado.jpg">Agregar al carrito</button>
+                                <button class="add-to-cart" data-id="6" data-name="Air Jordan 7 Olympic Limited Edition" data-price="350.00" data-image="assets/AirJordanZarpado.jpg">Agregar al carrito</button>
+                            </div>
+                        </div>
+        
+                        <!-- Nuevos productos agregados -->
+                        <!-- Air Jordan 13 -->
+                        <div class="product-card" data-category="performance">
+                            <div class="product-image">
+                                <img src="assets/AirJordan-13.jpg" alt="Air Jordan 13 Retro">
+                                <div class="product-hover">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Vista rápida</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Air Jordan 13</h3>
+                                <p>Retro "Bred"</p>
+                                <div class="product-details">
+                                    <div class="color-options">
+                                        <span class="color-dot black" title="Negro"></span>
+                                        <span class="color-dot red" title="Rojo"></span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span class="rating-count">(92)</span>
+                                    </div>
+                                </div>
+                                <span class="price">$239.99</span>
+                                <button class="add-to-cart" data-id="7" data-name="Air Jordan 13 Retro Bred" data-price="239.99" data-image="assets/AirJordan-13.jpg">Agregar al carrito</button>
+                            </div>
+                        </div>
+        
+                        <!-- Air Jordan 5 -->
+                        <div class="product-card" data-category="limited">
+                            <div class="product-badge exclusive">EXCLUSIVO</div>
+                            <div class="product-image">
+                                <img src="assets/AirJordan-5.jpg" alt="Air Jordan 5 Retro">
+                                <div class="product-hover">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Vista rápida</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Air Jordan 5</h3>
+                                <p>Retro "Off-White"</p>
+                                <div class="product-details">
+                                    <div class="color-options">
+                                        <span class="color-dot white" title="Blanco"></span>
+                                        <span class="color-dot cream" title="Crema"></span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="rating-count">(45)</span>
+                                    </div>
+                                </div>
+                                <span class="price">$399.99</span>
+                                <button class="add-to-cart" data-id="8" data-name="Air Jordan 5 Retro Off-White" data-price="399.99" data-image="assets/AirJordan-5.jpg">Agregar al carrito</button>
                             </div>
                         </div>
                     </div>
+                </div>
+        
+                <!-- Paginación de productos -->
+                <div class="product-pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-btn">8</button>
+                </div>
+        
+                <!-- Características destacadas -->
+                <div class="product-features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>100% Auténtico</h4>
+                        <p>Todos nuestros productos son originales con garantía</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h4>Envío Gratis</h4>
+                        <p>En compras superiores a $250</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-exchange-alt"></i>
+                        <h4>Devolución sin costo</h4>
+                        <p>30 días para cambios y devoluciones</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-lock"></i>
+                        <h4>Pago Seguro</h4>
+                        <p>Múltiples métodos de pago encriptados</p>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <div id="cart-sidebar" class="cart-sidebar">
             <div class="cart-header">
@@ -376,5 +634,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/song.js"></script>
 </body>
 </html>
