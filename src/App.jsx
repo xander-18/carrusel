@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Header from './components/Header';
+import Header from './components/header';
 import Nosotros from './pages/Nosotros';
 import Productos from './pages/Productos';
 import Coleccionistas from './pages/Coleccionista';
