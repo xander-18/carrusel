@@ -11,6 +11,7 @@ import AdminLogin from './layout/AdminLogin';
 import AdminProductos from './layout/AdminProductos';
 import './App.css';
 import Payment from './layout/Payment';
+import backgroundMusicFile from './assets/audio/beat.mp3'; // Ajusta la ruta si es necesario
 
 // Componente para rutas protegidas
 const ProtectedRoute = ({ element }) => {
@@ -56,6 +57,7 @@ function App() {
     <CartProvider>
       <Router>
         <div className="app">
+        <BackgroundMusic src={backgroundMusicFile} loop={true} volume={0.5} />
           <Header />
           <main>
             <Routes>
