@@ -6,7 +6,7 @@ import ZapTwo from '../assets/img/ZapTwo.jpg';
 import ZapThree from '../assets/img/Zapthree.jpeg';
 import ZapFour from '../assets/img/ZapFour.jpg';
 import ZapFive from '../assets/img/ZapFive.jpg';
-import Carousel from '../components/carrusel';
+import Carousel from '../components/Carrusel';
 import { FaCheckCircle, FaShippingFast, FaExchangeAlt, FaLock } from 'react-icons/fa';
 
 const Productos = () => {
