@@ -11,6 +11,7 @@ import AdminLogin from './layout/AdminLogin';
 import AdminProductos from './layout/AdminProductos';
 import './App.css';
 import Payment from './layout/Payment';
+import BackgroundMusic from './components/BackgroundMusic';
 import backgroundMusicFile from './assets/audio/beat.mp3'; // Ajusta la ruta si es necesario
 
 // Componente para rutas protegidas
