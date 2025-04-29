@@ -1,0 +1,443 @@
+/* Variables globales */
+:root {
+    --primary-color: #e63946;
+    --secondary-color: #f1faee;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --text-color: #f1f1f1;
+    --border-color: #333;
+    --input-background: #2a2a2a;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+  }
+  
+  /* Estilos generales */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2,
+  h3,
+  h4 {
+    margin-top: 0;
+    color: var(--text-color);
+  }
+  
+  /* Contenedor principal */
+  .payment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilos del carrito */
+  .cart-items {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+  
+  .cart-item-name {
+    font-weight: 500;
+  }
+  
+  .cart-item-price {
+    font-weight: 700;
+  }
+  
+  .cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid var(--border-color);
+    font-size: 1.2rem;
+  }
+  
+  /* Botones */
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #d32f2f;
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .modal-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .close-modal {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s;
+  }
+  
+  .close-modal:hover {
+    color: var(--primary-color);
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  /* Pasos de pago */
+  .payment-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  .payment-steps::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 1;
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+  }
+  
+  .step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+  
+  .step.active .step-number {
+    background-color: var(--primary-color);
+  }
+  
+  .step-title {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: all 0.3s;
+  }
+  
+  .step.active .step-title {
+    opacity: 1;
+    font-weight: 600;
+  }
+  
+  /* Formularios */
+  .payment-form {
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="tel"],
+  .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-background);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input[type="text"]:focus,
+  .form-group input[type="tel"]:focus,
+  .form-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  /* Radio buttons */
+  .form-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 12px;
+  }
+  
+  .form-group input[type="radio"] {
+    margin-right: 10px;
+    accent-color: var(--primary-color);
+  }
+  
+  /* Métodos de pago */
+  .payment-methods {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .payment-method {
+    flex: 1;
+    min-width: 100px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .payment-method i {
+    font-size: 1.5rem;
+  }
+  
+  .payment-method.active {
+    border-color: var(--primary-color);
+    background-color: rgba(230, 57, 70, 0.1);
+  }
+  
+  /* Formularios específicos de pago */
+  .payment-method-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+  
+  .yape-qr,
+  .bank-details,
+  .cash-details {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .yape-qr img {
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Resumen de compra */
+  .order-summary {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    padding: 20px;
+  }
+  
+  .summary-items {
+    margin-bottom: 20px;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .summary-item:last-child {
+    border-bottom: none;
+  }
+  
+  .summary-total {
+    border-top: 2px solid var(--border-color);
+    padding-top: 15px;
+  }
+  
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .summary-row.total {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .payment-details {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  /* Botones de formulario */
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+      gap: 0;
+    }
+  
+    .payment-methods {
+      flex-wrap: wrap;
+    }
+  
+    .payment-method {
+      min-width: calc(50% - 10px);
+    }
+  
+    .modal-content {
+      width: 95%;
+      max-height: 95vh;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .payment-method {
+      min-width: 100%;
+    }
+  
+    .step-title {
+      font-size: 0.8rem;
+    }
+  
+    .form-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .form-buttons button {
+      width: 100%;
+    }
+  
+    .btn-secondary {
+      order: 2;
+    }
+  
+    .btn-primary {
+      order: 1;
+    }
+  }
+  

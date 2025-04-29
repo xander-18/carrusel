@@ -1,0 +1,217 @@
+#coleccionistas {
+    background-color: black;
+    position: relative;
+  }
+  
+  .collectors-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .section-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .collectors-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  .collectors-info {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .collectors-text {
+    flex: 1;
+  }
+  
+  .collectors-text h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .collectors-text h3 i {
+    color: gold;
+  }
+  
+  .membership-levels {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .level-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .level-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .level-card.featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+  }
+  
+  .level-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+  }
+  
+  .level-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .level-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .level-header h4 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .level-price {
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .level-benefits {
+    list-style: none;
+    margin-bottom: 25px;
+  }
+  
+  .level-benefits li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+  }
+  
+  .level-benefits li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+  }
+  
+  .level-card .btn-primary {
+    width: 100%;
+  }
+  
+  .collectors-testimonials {
+    margin-top: 40px;
+  }
+  
+  .collectors-testimonials h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+  
+  .testimonial-slider {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .testimonial {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 20px;
+  }
+  
+  .testimonial-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  .testimonial-content {
+    flex: 1;
+  }
+  
+  .testimonial-content p {
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .testimonial-author h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  
+  .testimonial-author span {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .collectors-gallery {
+    margin-top: 40px;
+  }
+  
+  .collectors-gallery h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+  
+  .gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(0.95);
+  }
+  
