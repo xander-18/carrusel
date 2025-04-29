@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- <audio src="assets/audio/beat.mp3" autoplay loop hidden></audio> -->
-    <audio id="background-music" src="assets/audio/beat.mp3" loop hidden></audio>
+    <!-- <audio id="background-music" src="assets/audio/beat.mp3" loop hidden></audio> -->
 
     <header>
         <div class="container header-content">
@@ -23,6 +23,7 @@
                 <ul>
                     <li><a href="#nosotros" class="nav-link active">Nosotros</a></li>
                     <li><a href="#productos" class="nav-link">Productos</a></li>
+                    <li><a href="#coleccionistas" class="nav-link">Coleccionistas</a></li>
                     <li><a href="#contactanos" class="nav-link">Contáctanos</a></li>
                 </ul>
             </nav>
@@ -35,20 +36,25 @@
 
     <main>
         <section id="nosotros" class="section active">
-            <div class="video-background">
-                <video autoplay muted loop playsinline webkit-playsinline poster="assets/video-poster.jpg">
-                    <source src="videos/jordan_historia.mp4" type="video/mp4">
-                    Tu navegador no soporta reproducción de video.
-                </video>
-                <div class="overlay"></div>
-            </div>
             <div class="container">
                 <div class="nosotros-content">
                     <div class="nosotros-text">
-                        <h2 class="glow-text">NUESTRA HISTORIA</h2>
+                        <h2>NUESTRA HISTORIA</h2>
                         <p>Jordan Elite nació en 2015 con una misión clara: traer las mejores y más exclusivas zapatillas Jordan al mercado local. Fundada por apasionados del baloncesto y coleccionistas de sneakers, nuestra tienda se ha convertido en el destino preferido para los verdaderos fanáticos de la cultura Jordan.</p>
                         <p>Cada par de zapatillas que ofrecemos ha sido cuidadosamente seleccionado, garantizando autenticidad y calidad en cada detalle. No solo vendemos calzado, creamos una experiencia para los amantes del estilo y la exclusividad.</p>
                     </div>
+                    <div class="nosotros-image">
+                        <div class="video-wrapper">
+                          <video
+                            class="nosotros-video"
+                            src="videos/jordan_historia.mp4"
+                            autoplay muted loop playsinline webkit-playsinline
+                            poster="assets/video-poster.jpg"
+                          >
+                            Tu navegador no soporta reproducción de video.
+                          </video>
+                        </div>
+                      </div>
                 </div>
             </div>
         </section>
@@ -77,6 +83,7 @@
                     <button class="category-btn" data-category="retro">Retro</button>
                     <button class="category-btn" data-category="performance">Performance</button>
                     <button class="category-btn" data-category="limited">Edición Limitada</button>
+                    <button class="category-btn" data-category="collaboration">Collaborations</button>
                 </div>
         
                 <!-- Añadimos filtros rápidos -->
@@ -88,6 +95,7 @@
                             <option value="newest">Más recientes</option>
                             <option value="price-low">Precio: Menor a Mayor</option>
                             <option value="price-high">Precio: Mayor a Menor</option>
+                            <option value="exclusive">Exclusividad</option>
                         </select>
                     </div>
                     <div class="filter-group">
@@ -129,6 +137,9 @@
                                         <span class="rating-count">(124)</span>
                                     </div>
                                 </div>
+                                <div class="product-authenticity">
+                                    <i class="fas fa-certificate"></i> Autenticidad verificada
+                                </div>
                                 <span class="price">$189.99</span>
                                 <button class="add-to-cart" data-id="1" data-name="Air Jordan 1 Retro High OG Chicago" data-price="189.99" data-image="assets/AirJordan-1.jpg">Agregar al carrito</button>
                             </div>
@@ -159,6 +170,9 @@
                                         <i class="far fa-star"></i>
                                         <span class="rating-count">(98)</span>
                                     </div>
+                                </div>
+                                <div class="product-authenticity">
+                                    <i class="fas fa-certificate"></i> Autenticidad verificada
                                 </div>
                                 <span class="price">$209.99</span>
                                 <button class="add-to-cart" data-id="2" data-name="Air Jordan 4 Retro Fire Red" data-price="209.99" data-image="assets/AirJordan2-13.jpg">Agregar al carrito</button>
@@ -191,6 +205,9 @@
                                         <span class="rating-count">(156)</span>
                                     </div>
                                 </div>
+                                <div class="product-authenticity">
+                                    <i class="fas fa-certificate"></i> Autenticidad verificada
+                                </div>
                                 <span class="price">$229.99</span>
                                 <button class="add-to-cart" data-id="3" data-name="Air Jordan 11 Retro Concord" data-price="229.99" data-image="assets/AirJordan3-13.jpg">Agregar al carrito</button>
                             </div>
@@ -221,6 +238,9 @@
                                         <span class="rating-count">(87)</span>
                                     </div>
                                 </div>
+                                <div class="product-authenticity">
+                                    <i class="fas fa-certificate"></i> Autenticidad verificada
+                                </div>
                                 <span class="price">$199.99</span>
                                 <button class="add-to-cart" data-id="4" data-name="Air Jordan 3 Retro Black Cement" data-price="199.99" data-image="assets/AirJordan4-13.jpg">Agregar al carrito</button>
                             </div>
@@ -250,6 +270,9 @@
                                         <i class="far fa-star"></i>
                                         <span class="rating-count">(112)</span>
                                     </div>
+                                </div>
+                                <div class="product-authenticity">
+                                    <i class="fas fa-certificate"></i> Autenticidad verificada
                                 </div>
                                 <span class="price">$219.99</span>
                                 <button class="add-to-cart" data-id="5" data-name="Air Jordan 6 Retro Infrared" data-price="219.99" data-image="assets/AirJordan4.jpg">Agregar al carrito</button>
@@ -283,6 +306,9 @@
                                         <span class="rating-count">(74)</span>
                                     </div>
                                 </div>
+                                <div class="product-authenticity">
+                                    <i class="fas fa-certificate"></i> Autenticidad verificada
+                                </div>
                                 <span class="price">$350.00</span>
                                 <button class="add-to-cart" data-id="6" data-name="Air Jordan 7 Olympic Limited Edition" data-price="350.00" data-image="assets/AirJordanZarpado.jpg">Agregar al carrito</button>
                             </div>
@@ -313,6 +339,9 @@
                                         <i class="far fa-star"></i>
                                         <span class="rating-count">(92)</span>
                                     </div>
+                                </div>
+                                <div class="product-authenticity">
+                                    <i class="fas fa-certificate"></i> Autenticidad verificada
                                 </div>
                                 <span class="price">$239.99</span>
                                 <button class="add-to-cart" data-id="7" data-name="Air Jordan 13 Retro Bred" data-price="239.99" data-image="assets/AirJordan-13.jpg">Agregar al carrito</button>
@@ -345,8 +374,88 @@
                                         <span class="rating-count">(45)</span>
                                     </div>
                                 </div>
+                                <div class="product-authenticity">
+                                    <i class="fas fa-certificate"></i> Autenticidad verificada
+                                </div>
                                 <span class="price">$399.99</span>
                                 <button class="add-to-cart" data-id="8" data-name="Air Jordan 5 Retro Off-White" data-price="399.99" data-image="assets/AirJordan-5.jpg">Agregar al carrito</button>
+                            </div>
+                        </div>
+
+                        <!-- Nuevos productos exclusivos -->
+                        <!-- Air Jordan 1 x Travis Scott -->
+                        <div class="product-card" data-category="collaboration">
+                            <div class="product-badge ultra-exclusive">ULTRA EXCLUSIVO</div>
+                            <div class="product-image">
+                                <img src="assets/AirJordan-travis.jpg" alt="Air Jordan 1 x Travis Scott">
+                                <div class="product-hover">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Vista rápida</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Air Jordan 1</h3>
+                                <p>High OG "Travis Scott"</p>
+                                <div class="product-details">
+                                    <div class="color-options">
+                                        <span class="color-dot brown" title="Marrón"></span>
+                                        <span class="color-dot black" title="Negro"></span>
+                                        <span class="color-dot white" title="Blanco"></span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="rating-count">(32)</span>
+                                    </div>
+                                </div>
+                                <div class="product-authenticity">
+                                    <i class="fas fa-certificate"></i> Autenticidad verificada
+                                </div>
+                                <div class="limited-stock">
+                                    <i class="fas fa-exclamation-circle"></i> Solo 2 pares disponibles
+                                </div>
+                                <span class="price">$1,299.99</span>
+                                <button class="add-to-cart" data-id="9" data-name="Air Jordan 1 High OG Travis Scott" data-price="1299.99" data-image="assets/AirJordan-travis.jpg">Agregar al carrito</button>
+                            </div>
+                        </div>
+
+                        <!-- Air Jordan 4 x Union LA -->
+                        <div class="product-card" data-category="collaboration">
+                            <div class="product-badge exclusive">COLABORACIÓN</div>
+                            <div class="product-image">
+                                <img src="assets/AirJordan-union.jpg" alt="Air Jordan 4 x Union LA">
+                                <div class="product-hover">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Vista rápida</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Air Jordan 4</h3>
+                                <p>Union LA "Guava Ice"</p>
+                                <div class="product-details">
+                                    <div class="color-options">
+                                        <span class="color-dot pink" title="Rosa"></span>
+                                        <span class="color-dot cream" title="Crema"></span>
+                                        <span class="color-dot blue" title="Azul"></span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span class="rating-count">(28)</span>
+                                    </div>
+                                </div>
+                                <div class="product-authenticity">
+                                    <i class="fas fa-certificate"></i> Autenticidad verificada
+                                </div>
+                                <div class="limited-stock">
+                                    <i class="fas fa-exclamation-circle"></i> Solo 3 pares disponibles
+                                </div>
+                                <span class="price">$899.99</span>
+                                <button class="add-to-cart" data-id="10" data-name="Air Jordan 4 Union LA Guava Ice" data-price="899.99" data-image="assets/AirJordan-union.jpg">Agregar al carrito</button>
                             </div>
                         </div>
                     </div>
@@ -387,6 +496,121 @@
             </div>
         </section>
 
+        <!-- Nueva sección para coleccionistas -->
+        <section id="coleccionistas" class="section">
+            <div class="container">
+                <div class="collectors-title">
+                    <h2 class="wow-title">CLUB DE <span class="ultra-glow">COLECCIONISTAS</span></h2>
+                    <p class="section-subtitle">Únete a nuestra exclusiva comunidad de verdaderos aficionados</p>
+                </div>
+
+                <div class="collectors-content">
+                    <div class="collectors-info">
+                        <div class="collectors-text">
+                            <h3><i class="fas fa-crown"></i> Membresía Elite</h3>
+                            <p>Nuestro club de coleccionistas ofrece beneficios exclusivos para los verdaderos entusiastas de Jordan. Accede a lanzamientos anticipados, eventos privados y oportunidades únicas para ampliar tu colección con los modelos más codiciados del mercado.</p>
+                            
+                            <div class="membership-levels">
+                                <div class="level-card">
+                                    <div class="level-header">
+                                        <h4>Silver</h4>
+                                        <span class="level-price">$99/año</span>
+                                    </div>
+                                    <ul class="level-benefits">
+                                        <li>Acceso anticipado a nuevos lanzamientos</li>
+                                        <li>10% de descuento en compras regulares</li>
+                                        <li>Invitaciones a eventos exclusivos</li>
+                                        <li>Newsletter mensual de coleccionista</li>
+                                    </ul>
+                                    <button class="btn-primary">Unirse ahora</button>
+                                </div>
+                                
+                                <div class="level-card featured">
+                                    <div class="level-badge">Recomendado</div>
+                                    <div class="level-header">
+                                        <h4>Gold</h4>
+                                        <span class="level-price">$199/año</span>
+                                    </div>
+                                    <ul class="level-benefits">
+                                        <li>Todos los beneficios Silver</li>
+                                        <li>15% de descuento en compras regulares</li>
+                                        <li>Acceso a modelos de edición limitada</li>
+                                        <li>Servicio de autenticación gratuito</li>
+                                        <li>Envío express gratuito</li>
+                                    </ul>
+                                    <button class="btn-primary">Unirse ahora</button>
+                                </div>
+                                
+                                <div class="level-card">
+                                    <div class="level-header">
+                                        <h4>Platinum</h4>
+                                        <span class="level-price">$349/año</span>
+                                    </div>
+                                    <ul class="level-benefits">
+                                        <li>Todos los beneficios Gold</li>
+                                        <li>20% de descuento en todas las compras</li>
+                                        <li>Acceso garantizado a todos los lanzamientos</li>
+                                        <li>Servicio de concierge personal</li>
+                                        <li>Invitaciones VIP a eventos con atletas</li>
+                                        <li>Regalo exclusivo de bienvenida</li>
+                                    </ul>
+                                    <button class="btn-primary">Unirse ahora</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="collectors-testimonials">
+                        <h3>Lo que dicen nuestros coleccionistas</h3>
+                        <div class="testimonial-slider">
+                            <div class="testimonial">
+                                <div class="testimonial-image">
+                                    <img src="assets/colect.jpeg" alt="Coleccionista">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>"Gracias a Jordan Elite he conseguido pares que buscaba desde hace años. Su autenticidad y exclusividad no tienen comparación."</p>
+                                    <div class="testimonial-author">
+                                        <h4> PJ Tucker</h4>
+                                        <span>Coleccionista desde 2018</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial">
+                                <div class="testimonial-image">
+                                    <img src="assets/collect2.jpg" alt="Coleccionista">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>"La membresía Platinum ha sido la mejor inversión para mi colección. He conseguido modelos que ni siquiera sabía que podría encontrar en el país."</p>
+                                    <div class="testimonial-author">
+                                        <h4>Travis Scott</h4>
+                                        <span>Miembro Platinum</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="collectors-gallery">
+                        <h3>Galería de coleccionistas</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="assets/chris.jpeg" alt="Colección de Jordan">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="assets/macklemore.jpeg" alt="Colección de Jordan">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="assets/khaled.jpg" alt="Colección de Jordan">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="assets/xander.jpeg" alt="Colección de Jordan">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <div id="cart-sidebar" class="cart-sidebar">
             <div class="cart-header">
@@ -600,14 +824,24 @@
                         <div><i class="fas fa-phone"></i> (01) 123-4567</div>
                         <div><i class="fas fa-envelope"></i> info@jordanelite.com</div>
                     </div>
+                    <div class="store-hours">
+                        <h4>Horario de atención</h4>
+                        <p><i class="far fa-clock"></i> Lunes a Viernes: 10:00 - 20:00</p>
+                        <p><i class="far fa-clock"></i> Sábados: 10:00 - 18:00</p>
+                        <p><i class="far fa-clock"></i> Domingos: 11:00 - 16:00</p>
+                    </div>
                 </div>
                 <div class="footer-section links">
                     <h3>Enlaces rápidos</h3>
                     <ul>
                         <li><a href="#nosotros">Nosotros</a></li>
                         <li><a href="#productos">Productos</a></li>
+                        <li><a href="#coleccionistas">Club de Coleccionistas</a></li>
+                        <li><a href="#autenticidad">Autenticidad</a></li>
                         <li><a href="#">Términos y condiciones</a></li>
                         <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-section social">
@@ -617,14 +851,28 @@
                         <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
                     </div>
                     <div class="newsletter">
                         <h4>Suscríbete a nuestro newsletter</h4>
+                        <p>Recibe las últimas novedades y lanzamientos exclusivos</p>
                         <form>
                             <input type="email" placeholder="Tu correo electrónico">
                             <button type="submit" class="btn-primary">Suscribirse</button>
                         </form>
                     </div>
+                </div>
+            </div>
+            <div class="payment-methods-footer">
+                <h4>Métodos de pago aceptados</h4>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fas fa-university"></i>
                 </div>
             </div>
             <div class="footer-bottom">
