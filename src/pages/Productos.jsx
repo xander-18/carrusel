@@ -9,7 +9,7 @@ import ZapFive from '../assets/img/ZapFive.jpg';
 import Carousel from '../components/Carrusel';
 import { FaCheckCircle, FaShippingFast, FaExchangeAlt, FaLock } from 'react-icons/fa';
 
-const Productos = () => {
+const Productos = ({ products: externalProducts }) => {
   const { addToCart } = useCart();
   const [products, setProducts] = useState([
     {
@@ -147,6 +147,23 @@ const Productos = () => {
   const [sortOrder, setSortOrder] = useState('popular');
   const [viewMode, setViewMode] = useState('grid');
   const [filteredProducts, setFilteredProducts] = useState([]);
+  
+  // Incorporar productos externos del localStorage si existen
+  useEffect(() => {
+    if (externalProducts && externalProducts.length > 0) {
+      // Combinar los productos predefinidos con los productos externos
+      const allProducts = [...products];
+      
+      // Agregar solo los productos externos que no estén ya en la lista (por ID)
+      externalProducts.forEach(extProduct => {
+        if (!allProducts.some(p => p.id === extProduct.id)) {
+          allProducts.push(extProduct);
+        }
+      });
+      
+      setProducts(allProducts);
+    }
+  }, [externalProducts]);
 
   // Manejar el filtrado de productos por categoría
   useEffect(() => {

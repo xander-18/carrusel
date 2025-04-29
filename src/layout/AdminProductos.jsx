@@ -4,7 +4,7 @@ const AdminProductos = ({ onAddProduct }) => {
   const [form, setForm] = useState({
     name: '',
     price: '',
-    category: '',
+    category: 'retro',
     rating: 5,
     ratingCount: 0,
     colors: '',
@@ -31,7 +31,13 @@ const AdminProductos = ({ onAddProduct }) => {
       ...form,
       price: parseFloat(form.price),
       colors: form.colors.split(',').map(c => c.trim()),
-      id: Date.now()
+      id: Date.now(),
+      variant: "",  // Valores por defecto para campos no incluidos en el formulario
+      bestseller: false,
+      material: "Cuero premium y textiles sintéticos",
+      sole: "Goma de alta resistencia",
+      release: "Nueva adición",
+      features: "Sistema de amortiguación Air, soporte para el arco plantar mejorado, cordones reforzados"
     });
     
     // Mensaje de éxito
@@ -41,8 +47,8 @@ const AdminProductos = ({ onAddProduct }) => {
     // Reset del formulario
     setForm({
       name: '',
-      variant: '',
       price: '',
+      category: 'retro',
       rating: 5,
       ratingCount: 0,
       colors: '',
@@ -64,7 +70,7 @@ const AdminProductos = ({ onAddProduct }) => {
   return (
     <div style={{ 
       maxWidth: 600, 
-      margin: '40px auto', 
+      margin: '80px auto', 
       background: '#222', 
       padding: 30, 
       borderRadius: 10,
@@ -87,7 +93,7 @@ const AdminProductos = ({ onAddProduct }) => {
       
       <div style={{ display: 'flex', gap: '30px', flexWrap: 'wrap' }}>
         <div style={{ flex: '1 1 300px' }}>
-          <form onSubmit={handleSubmit}>
+          <div>
             <input 
               name="name" 
               placeholder="Nombre del producto" 
@@ -97,7 +103,17 @@ const AdminProductos = ({ onAddProduct }) => {
               style={inputStyle}
             />
             
-          
+            <select
+              name="category"
+              value={form.category}
+              onChange={handleChange}
+              style={inputStyle}
+            >
+              <option value="retro">Retro</option>
+              <option value="performance">Performance</option>
+              <option value="limited">Edición Limitada</option>
+              <option value="collaboration">Collaborations</option>
+            </select>
             
             <input 
               name="price" 
@@ -110,6 +126,14 @@ const AdminProductos = ({ onAddProduct }) => {
               required 
               style={inputStyle}
             />
+            
+            <input 
+              name="colors" 
+              placeholder="Colores (separados por comas)" 
+              value={form.colors} 
+              onChange={handleChange} 
+              style={inputStyle}
+            />
          
             <input 
               name="image" 
@@ -120,7 +144,7 @@ const AdminProductos = ({ onAddProduct }) => {
             />
             
             <button 
-              type="submit"
+              onClick={handleSubmit}
               style={{ 
                 width: '100%',
                 padding: '12px',
@@ -134,7 +158,7 @@ const AdminProductos = ({ onAddProduct }) => {
             >
               Agregar Producto
             </button>
-          </form>
+          </div>
         </div>
         
         {/* Vista previa de la imagen */}
