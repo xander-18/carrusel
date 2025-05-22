@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../assets/style/payment.css';
 import { useCart } from '../context/CartContext';
-import Swal from 'sweetalert2'; // Import SweetAlert2
+import Swal from 'sweetalert2';
 
-// Componente principal del modal de pago
 const PaymentModal = ({ onClose, onComplete }) => {
-  const { cart } = useCart(); // Obtenemos el carrito del contexto
+  const { cart } = useCart();
   const [step, setStep] = useState(1);
   const [deliveryMethod, setDeliveryMethod] = useState('delivery');
   const [paymentMethod, setPaymentMethod] = useState('card');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    departamento: '',
+    ciudad: '',
+    distrito: '',
     address: '',
-    city: '',
     cardNumber: '',
     cardExpiry: '',
     cardCvv: '',
@@ -22,6 +23,34 @@ const PaymentModal = ({ onClose, onComplete }) => {
     transferConfirmation: '',
     cashReference: ''
   });
+  const [datasetPeru, setDatasetPeru] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Cargar datasetPeru.json al montar el componente
+  useEffect(() => {
+    fetch('/data/datasetPeru.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('No se pudo cargar el archivo datasetPeru.json');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setDatasetPeru(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error al cargar datos',
+          text: 'No se pudo cargar la lista de departamentos. Intenta de nuevo más tarde.',
+          confirmButtonColor: '#3085d6'
+        });
+      });
+  }, []);
 
   const handleNextStep = () => {
     if (step === 1 && validateDeliveryForm()) {
@@ -36,12 +65,12 @@ const PaymentModal = ({ onClose, onComplete }) => {
   };
 
   const handleCompletePurchase = () => {
-    onComplete(); // This calls the parent function which handles the cart clearing and success message
+    onComplete();
   };
 
   const validateDeliveryForm = () => {
-    const { name, phone, address, city } = formData;
-    if (deliveryMethod === 'delivery' && (!name || !phone || !address || !city)) {
+    const { name, phone, departamento, ciudad, distrito, address } = formData;
+    if (deliveryMethod === 'delivery' && (!name || !phone || !departamento || !ciudad || !distrito || !address)) {
       Swal.fire({
         icon: 'error',
         title: 'Campos incompletos',
@@ -99,24 +128,32 @@ const PaymentModal = ({ onClose, onComplete }) => {
     setFormData({ ...formData, [name]: value });
   };
 
+  if (loading) {
+    return <div>Cargando datos...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="modal">
       <div className="modal-content">
         <div className="modal-header">
           <h3>Finalizar Compra</h3>
-          <span className="close-modal" onClick={onClose}>&times;</span>
+          <span className="close-modal" onClick={onClose}>×</span>
         </div>
         <div className="modal-body">
           <div className="payment-steps">
-            <div className={`step ${step === 1 ? 'active' : ''}`} data-step="delivery">
+            <div className={['step', step === 1 ? 'active' : ''].join(' ')} data-step="delivery">
               <div className="step-number">1</div>
               <div className="step-title">Entrega</div>
             </div>
-            <div className={`step ${step === 2 ? 'active' : ''}`} data-step="payment">
+            <div className={['step', step === 2 ? 'active' : ''].join(' ')} data-step="payment">
               <div className="step-number">2</div>
               <div className="step-title">Pago</div>
             </div>
-            <div className={`step ${step === 3 ? 'active' : ''}`} data-step="confirmation">
+            <div className={['step', step === 3 ? 'active' : ''].join(' ')} data-step="confirmation">
               <div className="step-number">3</div>
               <div className="step-title">Confirmación</div>
             </div>
@@ -126,7 +163,9 @@ const PaymentModal = ({ onClose, onComplete }) => {
               deliveryMethod={deliveryMethod}
               setDeliveryMethod={setDeliveryMethod}
               formData={formData}
+              setFormData={setFormData}
               handleInputChange={handleInputChange}
+              datasetPeru={datasetPeru}
             />
           )}
           {step === 2 && (
@@ -149,8 +188,53 @@ const PaymentModal = ({ onClose, onComplete }) => {
   );
 };
 
-// Componente del formulario de entrega
-const DeliveryForm = ({ deliveryMethod, setDeliveryMethod, formData, handleInputChange }) => {
+const DeliveryForm = ({ deliveryMethod, setDeliveryMethod, formData, setFormData, handleInputChange, datasetPeru }) => {
+  const [selectedDepartamento, setSelectedDepartamento] = useState(formData.departamento || '');
+  const [selectedCiudad, setSelectedCiudad] = useState(formData.ciudad || '');
+  const [selectedDistrito, setSelectedDistrito] = useState(formData.distrito || '');
+
+  const departamentos = datasetPeru.Departamentos.map(dep => dep.Departamento);
+
+  // Obtener ciudades basadas en el departamento seleccionado
+  const selectedDepData = datasetPeru.Departamentos.find(dep => dep.Departamento === selectedDepartamento);
+  const ciudades = selectedDepData ? selectedDepData.Ciudades.map(ciudad => ciudad.Ciudad) : [];
+
+  // Obtener distritos basados en la ciudad seleccionada
+  const selectedCiudadData = selectedDepData?.Ciudades.find(ciudad => ciudad.Ciudad === selectedCiudad);
+  const distritos = selectedCiudadData ? selectedCiudadData.Distritos : [];
+
+  // Manejar cambios en los selects
+  const handleSelectChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'departamento') {
+      setSelectedDepartamento(value);
+      setSelectedCiudad('');
+      setSelectedDistrito('');
+      setFormData({
+        ...formData,
+        departamento: value,
+        ciudad: '',
+        distrito: '',
+        address: ''
+      });
+    } else if (name === 'ciudad') {
+      setSelectedCiudad(value);
+      setSelectedDistrito('');
+      setFormData({
+        ...formData,
+        ciudad: value,
+        distrito: '',
+        address: ''
+      });
+    } else if (name === 'distrito') {
+      setSelectedDistrito(value);
+      setFormData({
+        ...formData,
+        distrito: value
+      });
+    }
+  };
+
   return (
     <div className="payment-form" id="delivery-form">
       <h4>Método de entrega</h4>
@@ -188,13 +272,67 @@ const DeliveryForm = ({ deliveryMethod, setDeliveryMethod, formData, handleInput
             <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleInputChange} required />
           </div>
           <div className="form-group">
-            <label htmlFor="address">Dirección</label>
-            <input type="text" id="address" name="address" value={formData.address} onChange={handleInputChange} required />
+            <label htmlFor="departamento">Departamento</label>
+            <select
+              id="departamento"
+              name="departamento"
+              value={selectedDepartamento}
+              onChange={handleSelectChange}
+              required
+            >
+              <option value="">Selecciona un departamento</option>
+              {departamentos.map((dep, index) => (
+                <option key={index} value={dep}>{dep}</option>
+              ))}
+            </select>
           </div>
-          <div className="form-group">
-            <label htmlFor="city">Ciudad</label>
-            <input type="text" id="city" name="city" value={formData.city} onChange={handleInputChange} required />
-          </div>
+          {selectedDepartamento && (
+            <div className="form-group">
+              <label htmlFor="ciudad">Ciudad</label>
+              <select
+                id="ciudad"
+                name="ciudad"
+                value={selectedCiudad}
+                onChange={handleSelectChange}
+                required
+              >
+                <option value="">Selecciona una ciudad</option>
+                {ciudades.map((ciudad, index) => (
+                  <option key={index} value={ciudad}>{ciudad}</option>
+                ))}
+              </select>
+            </div>
+          )}
+          {selectedCiudad && (
+            <div className="form-group">
+              <label htmlFor="distrito">Distrito</label>
+              <select
+                id="distrito"
+                name="distrito"
+                value={selectedDistrito}
+                onChange={handleSelectChange}
+                required
+              >
+                <option value="">Selecciona un distrito</option>
+                {distritos.map((distrito, index) => (
+                  <option key={index} value={distrito}>{distrito}</option>
+                ))}
+              </select>
+            </div>
+          )}
+          {selectedDistrito && (
+            <div className="form-group">
+              <label htmlFor="address">Dirección</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                value={formData.address}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          )}
         </div>
       )}
       {deliveryMethod === 'pickup' && (
@@ -214,14 +352,14 @@ const DeliveryForm = ({ deliveryMethod, setDeliveryMethod, formData, handleInput
   );
 };
 
-// Componente del formulario de pago
+// Resto del código (PaymentForm, ConfirmationForm, Payment) permanece sin cambios
 const PaymentForm = ({ paymentMethod, setPaymentMethod, formData, handleInputChange }) => {
   return (
     <div className="payment-form" id="payment-form">
       <h4>Método de pago</h4>
       <div className="payment-methods">
         <div
-          className={`payment-method ${paymentMethod === 'card' ? 'active' : ''}`}
+          className={['payment-method', paymentMethod === 'card' ? 'active' : ''].join(' ')}
           data-method="card"
           onClick={() => setPaymentMethod('card')}
         >
@@ -229,7 +367,7 @@ const PaymentForm = ({ paymentMethod, setPaymentMethod, formData, handleInputCha
           <span>Tarjeta</span>
         </div>
         <div
-          className={`payment-method ${paymentMethod === 'yape' ? 'active' : ''}`}
+          className={['payment-method', paymentMethod === 'yape' ? 'active' : ''].join(' ')}
           data-method="yape"
           onClick={() => setPaymentMethod('yape')}
         >
@@ -237,7 +375,7 @@ const PaymentForm = ({ paymentMethod, setPaymentMethod, formData, handleInputCha
           <span>Yape</span>
         </div>
         <div
-          className={`payment-method ${paymentMethod === 'transfer' ? 'active' : ''}`}
+          className={['payment-method', paymentMethod === 'transfer' ? 'active' : ''].join(' ')}
           data-method="transfer"
           onClick={() => setPaymentMethod('transfer')}
         >
@@ -245,7 +383,7 @@ const PaymentForm = ({ paymentMethod, setPaymentMethod, formData, handleInputCha
           <span>Transferencia</span>
         </div>
         <div
-          className={`payment-method ${paymentMethod === 'cash' ? 'active' : ''}`}
+          className={['payment-method', paymentMethod === 'cash' ? 'active' : ''].join(' ')}
           data-method="cash"
           onClick={() => setPaymentMethod('cash')}
         >
@@ -366,25 +504,23 @@ const PaymentForm = ({ paymentMethod, setPaymentMethod, formData, handleInputCha
   );
 };
 
-// Componente del formulario de confirmación
 const ConfirmationForm = ({ cart, deliveryMethod, paymentMethod }) => {
   const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
   const shipping = deliveryMethod === 'delivery' ? 5.00 : 0.00;
   const total = subtotal + shipping;
 
-  // Determinar mensaje según el método de pago
   const getPaymentMessage = () => {
-    switch(paymentMethod) {
+    switch (paymentMethod) {
       case 'card':
-        return "Pago con tarjeta";
+        return 'Pago con tarjeta';
       case 'yape':
-        return "Pago con Yape";
+        return 'Pago con Yape';
       case 'transfer':
-        return "Pago por transferencia bancaria";
+        return 'Pago por transferencia bancaria';
       case 'cash':
-        return "Pago contra entrega en efectivo";
+        return 'Pago contra entrega en efectivo';
       default:
-        return "Método de pago seleccionado";
+        return 'Método de pago seleccionado';
     }
   };
 
@@ -397,22 +533,22 @@ const ConfirmationForm = ({ cart, deliveryMethod, paymentMethod }) => {
             <div key={item.id} className="summary-item">
               <div className="summary-item-name">{item.name}</div>
               <div className="summary-item-quantity">x{item.quantity}</div>
-              <div className="summary-item-price">${(item.price * item.quantity).toFixed(2)}</div>
+              <div className="summary-item-price">{"$" + (item.price * item.quantity).toFixed(2)}</div>
             </div>
           ))}
         </div>
         <div className="summary-total">
           <div className="summary-row">
             <span>Subtotal</span>
-            <span className="summary-subtotal">${subtotal.toFixed(2)}</span>
+            <span className="summary-subtotal">{"$" + subtotal.toFixed(2)}</span>
           </div>
           <div className="summary-row">
             <span>Envío</span>
-            <span className="summary-shipping">${shipping.toFixed(2)}</span>
+            <span className="summary-shipping">{"$" + shipping.toFixed(2)}</span>
           </div>
           <div className="summary-row total">
             <span>Total</span>
-            <span className="summary-total-amount">${total.toFixed(2)}</span>
+            <span className="summary-total-amount">{"$" + total.toFixed(2)}</span>
           </div>
         </div>
         <div className="payment-details">
@@ -424,9 +560,8 @@ const ConfirmationForm = ({ cart, deliveryMethod, paymentMethod }) => {
   );
 };
 
-// Componente principal de la aplicación
 const Payment = () => {
-  const { cart, clearCart, getTotalPrice } = useCart(); // Obtenemos el carrito y funciones del contexto
+  const { cart, clearCart, getTotalPrice } = useCart();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleProceedToCheckout = () => {
@@ -443,17 +578,16 @@ const Payment = () => {
   };
 
   const handleCloseModal = () => {
-    // Confirmar si el usuario realmente desea cerrar el modal
     Swal.fire({
       title: '¿Estás seguro?',
-      text: "Si cierras el proceso de compra, perderás la información ingresada",
+      text: 'Si cierras el proceso de compra, perderás la información ingresada',
       icon: 'question',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Sí, salir',
       cancelButtonText: 'No, continuar'
-    }).then((result) => {
+    }).then(result => {
       if (result.isConfirmed) {
         setIsModalOpen(false);
       }
@@ -461,11 +595,8 @@ const Payment = () => {
   };
 
   const handleCompletePurchase = () => {
-    // Vacía el carrito global después de la compra
     clearCart();
     setIsModalOpen(false);
-    
-    // Muestra un mensaje de éxito con SweetAlert2
     Swal.fire({
       icon: 'success',
       title: '¡Compra realizada con éxito!',
@@ -476,7 +607,14 @@ const Payment = () => {
 
   return (
     <div className="payment-container">
-      <br /><br /><br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <h2>Tu carrito</h2>
       {cart.length === 0 ? (
         <p>No hay productos en el carrito</p>
@@ -486,22 +624,19 @@ const Payment = () => {
             <div key={item.id} className="cart-item">
               <div className="cart-item-name">{item.name}</div>
               <div className="cart-item-quantity">x{item.quantity}</div>
-              <div className="cart-item-price">${(item.price * item.quantity).toFixed(2)}</div>
+              <div className="cart-item-price">{ '$' + (item.price * item.quantity).toFixed(2) }</div>
             </div>
           ))}
           <div className="cart-total">
-            <strong>Total:</strong> ${getTotalPrice().toFixed(2)}
+            <strong>Total:</strong> {getTotalPrice().toFixed(2)}
           </div>
-          <button className="btn-primary" onClick={handleProceedToCheckout}>Proceder al pago</button>
+          <button className="btn-primary" onClick={handleProceedToCheckout}>
+            Proceder al pago
+          </button>
         </div>
       )}
-      
-      {isModalOpen && (
-        <PaymentModal
-          onClose={handleCloseModal}
-          onComplete={handleCompletePurchase}
-        />
-      )}
+
+      {isModalOpen && <PaymentModal onClose={handleCloseModal} onComplete={handleCompletePurchase} />}
     </div>
   );
 };

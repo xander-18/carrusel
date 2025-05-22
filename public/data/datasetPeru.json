@@ -1,0 +1,690 @@
+{
+  "País": "Peru",
+  "Departamentos": [
+    {
+      "Departamento": "AMAZONAS",
+      "Ciudades": [
+        {
+          "Ciudad": "BAGUA",
+          "Distritos": [
+            "ARAMANGO",
+            "BAGUA",
+            "COPALLIN",
+            "EL PARCO",
+            "IMAZA",
+            "LA PECA"
+          ]
+        },
+        {
+          "Ciudad": "BONGARA",
+          "Distritos": [
+            "CHISQUILLA",
+            "CHURUJA",
+            "COROSHA",
+            "CUISPES",
+            "FLORIDA",
+            "JAZAN",
+            "JUMBILLA",
+            "RECTA",
+            "SAN CARLOS",
+            "SHIPASBAMBA",
+            "VALERA",
+            "YAMBRASBAMBA"
+          ]
+        },
+        {
+          "Ciudad": "CHACHAPOYAS",
+          "Distritos": [
+            "ASUNCION",
+            "BALSAS",
+            "CHACHAPOYAS",
+            "CHETO",
+            "CHILIQUIN",
+            "CHUQUIBAMBA",
+            "GRANADA",
+            "HUANCAS",
+            "LA JALCA",
+            "LEIMEBAMBA",
+            "LEVANTO",
+            "MAGDALENA",
+            "MARISCAL CASTILLA",
+            "MOLINOPAMPA",
+            "MONTEVIDEO",
+            "OLLEROS",
+            "QUINJALCA",
+            "SAN FRANCISCO DE DAGUAS",
+            "SAN ISIDRO DE MAINO",
+            "SOLOCO",
+            "SONCHE"
+          ]
+        },
+        {
+          "Ciudad": "CONDORCANQUI",
+          "Distritos": [
+            "EL CENEPA",
+            "NIEVA",
+            "RIO SANTIAGO"
+          ]
+        },
+        {
+          "Ciudad": "LUYA",
+          "Distritos": [
+            "CAMPORREDONDO",
+            "COCABAMBA",
+            "COLCAMAR",
+            "CONILA",
+            "INGUILPATA",
+            "LAMUD",
+            "LONGUITA",
+            "LONYA CHICO",
+            "LUYA",
+            "LUYA VIEJO",
+            "MARIA",
+            "OCALLI",
+            "OCUMAL",
+            "PISUQUIA",
+            "PROVIDENCIA",
+            "SAN CRISTOBAL",
+            "SAN FRANCISCO DEL YESO",
+            "SAN JERONIMO",
+            "SAN JUAN DE LOPECANCHA",
+            "SANTA CATALINA",
+            "SANTO TOMAS",
+            "TINGO",
+            "TRITA"
+          ]
+        },
+        {
+          "Ciudad": "RODRIGUEZ DE MENDOZA",
+          "Distritos": [
+            "CHIRIMOTO",
+            "COCHAMAL",
+            "HUAMBO",
+            "LIMABAMBA",
+            "LONGAR",
+            "MARISCAL BENAVIDES",
+            "MILPUC",
+            "OMIA",
+            "SAN NICOLAS",
+            "SANTA ROSA",
+            "TOTORA",
+            "VISTA ALEGRE"
+          ]
+        },
+        {
+          "Ciudad": "UTCUBAMBA",
+          "Distritos": [
+            "BAGUA GRANDE",
+            "CAJARURO",
+            "CUMBA",
+            "EL MILAGRO",
+            "JAMALCA",
+            "LONYA GRANDE",
+            "YAMON"
+          ]
+        }
+      ]
+    },
+    {
+      "Departamento": "ANCASH",
+      "Ciudades": [
+        {
+          "Ciudad": "AIJA",
+          "Distritos": [
+            "AIJA",
+            "CORIS",
+            "HUACLLAN",
+            "LA MERCED",
+            "SUCCHA"
+          ]
+        },
+        {
+          "Ciudad": "ANTONIO RAYMONDI",
+          "Distritos": [
+            "ACZO",
+            "CHACCHO",
+            "CHINGAS",
+            "LLAMELLIN",
+            "MIRGAS",
+            "SAN JUAN DE RONTOY"
+          ]
+        },
+        {
+          "Ciudad": "ASUNCION",
+          "Distritos": [
+            "ACOCHACA",
+            "CHACAS"
+          ]
+        },
+        {
+          "Ciudad": "BOLOGNESI",
+          "Distritos": [
+            "ABELARDO PARDO LEZAMETA",
+            "ANTONIO RAYMONDI",
+            "AQUIA",
+            "CAJACAY",
+            "CANIS",
+            "CHIQUIAN",
+            "COLQUIOC",
+            "HUALLANCA",
+            "HUASTA",
+            "HUAYLLACAYAN",
+            "LA PRIMAVERA",
+            "MANGAS",
+            "PACLLON",
+            "SAN MIGUEL DE CORPANQUI",
+            "TICLLOS"
+          ]
+        },
+        {
+          "Ciudad": "CARHUAZ",
+          "Distritos": [
+            "ACOPAMPA",
+            "AMASHCA",
+            "ANTA",
+            "ATAQUERO",
+            "CARHUAZ",
+            "MARCARA",
+            "PARIAHUANCA",
+            "SAN MIGUEL DE ACO",
+            "SHILLA",
+            "TINCO",
+            "YUNGAR"
+          ]
+        },
+        {
+          "Ciudad": "CARLOS FERMIN FITZCARRALD",
+          "Distritos": [
+            "SAN LUIS",
+            "SAN NICOLAS",
+            "YAUYA"
+          ]
+        },
+        {
+          "Ciudad": "CASMA",
+          "Distritos": [
+            "BUENA VISTA ALTA",
+            "CASMA",
+            "COMANDANTE NOEL",
+            "YAUTAN"
+          ]
+        },
+        {
+          "Ciudad": "CORONGO",
+          "Distritos": [
+            "ACO",
+            "BAMBAS",
+            "CORONGO",
+            "CUSCA",
+            "LA PAMPA",
+            "YANAC",
+            "YUPAN"
+          ]
+        },
+        {
+          "Ciudad": "HUARI",
+          "Distritos": [
+            "ANRA",
+            "CAJAY",
+            "CHAVIN DE HUANTAR",
+            "HUACACHI",
+            "HUACCHIS",
+            "HUACHIS",
+            "HUANTAR",
+            "HUARI",
+            "MASIN",
+            "PAUCAS",
+            "PONTO",
+            "RAHUAPAMPA",
+            "RAPAYAN",
+            "SAN MARCOS",
+            "SAN PEDRO DE CHANA",
+            "UCO"
+          ]
+        },
+        {
+          "Ciudad": "HUARMEY",
+          "Distritos": [
+            "COCHAPETI",
+            "CULEBRAS",
+            "HUARMEY",
+            "HUAYAN",
+            "MALVAS"
+          ]
+        },
+        {
+          "Ciudad": "HUAYLAS",
+          "Distritos": [
+            "CARAZ",
+            "HUALLANCA",
+            "HUATA",
+            "HUAYLAS",
+            "MATO",
+            "PAMPAROMAS",
+            "PUEBLO LIBRE",
+            "SANTA CRUZ",
+            "SANTO TORIBIO",
+            "YURACMARCA"
+          ]
+        },
+        {
+          "Ciudad": "HUARAZ",
+          "Distritos": [
+            "COCHABAMBA",
+            "COLCABAMBA",
+            "HUANCHAY",
+            "HUARAZ",
+            "INDEPENDENCIA",
+            "JANGAS",
+            "LA LIBERTAD",
+            "OLLEROS",
+            "PAMPAS",
+            "PARIACOTO",
+            "PIRA",
+            "TARICA"
+          ]
+        },
+        {
+          "Ciudad": "MARISCAL LUZURIAGA",
+          "Distritos": [
+            "CASCA",
+            "ELEAZAR GUZMAN BARRON",
+            "FIDEL OLIVAS ESCUDERO",
+            "LLAMA",
+            "LLUMPA",
+            "LUCMA",
+            "MUSGA",
+            "PISCOBAMBA"
+          ]
+        },
+        {
+          "Ciudad": "OCROS",
+          "Distritos": [
+            "ACAS",
+            "CAJAMARQUILLA",
+            "CARHUAPAMPA",
+            "OCROS"
+          ]
+        }
+      ]
+    },
+    {
+      "Departamento": "PUNO",
+      "Ciudades": [
+        {
+          "Ciudad": "AZANGARO",
+          "Distritos": [
+            "ACHAYA",
+            "ARAPA",
+            "ASILLO",
+            "AZANGARO",
+            "CAMINACA",
+            "CHUPA",
+            "JOSE DOMINGO CHOQUEHUANCA",
+            "MUÑANI",
+            "POTONI",
+            "SAMAN",
+            "SAN ANTON",
+            "SAN JOSE",
+            "SAN JUAN DE SALINAS",
+            "SANTIAGO DE PUPUJA",
+            "TIRAPATA"
+          ]
+        },
+        {
+          "Ciudad": "CARABAYA",
+          "Distritos": [
+            "AJOYANI",
+            "AYAPATA",
+            "COASA",
+            "CORANI",
+            "CRUCERO",
+            "ITUATA",
+            "MACUSANI",
+            "OLLACHEA",
+            "SAN GABAN",
+            "USICAYOS"
+          ]
+        },
+        {
+          "Ciudad": "CHUCUITO",
+          "Distritos": [
+            "DESAGUADERO",
+            "HUACULLANI",
+            "JULI",
+            "KELLUYO",
+            "PISACOMA",
+            "POMATA",
+            "ZEPITA"
+          ]
+        },
+        {
+          "Ciudad": "EL COLLAO",
+          "Distritos": [
+            "CAPAZO",
+            "CONDURIRI",
+            "ILAVE",
+            "PILCUYO",
+            "SANTA ROSA"
+          ]
+        },
+        {
+          "Ciudad": "HUANCANE",
+          "Distritos": [
+            "COJATA",
+            "HUANCANE",
+            "HUATASANI",
+            "INCHUPALLA",
+            "PUSI",
+            "ROSASPATA",
+            "TARACO",
+            "VILQUE CHICO"
+          ]
+        },
+        {
+          "Ciudad": "LAMPA",
+          "Distritos": [
+            "CABANILLA",
+            "CALAPUJA",
+            "LAMPA",
+            "NICASIO",
+            "OCUVIRI",
+            "PALCA",
+            "PARATIA",
+            "PUCARA",
+            "SANTA LUCIA",
+            "VILAVILA"
+          ]
+        },
+        {
+          "Ciudad": "MELGAR",
+          "Distritos": [
+            "ANTAUTA",
+            "AYAVIRI",
+            "CUPI",
+            "LLALLI",
+            "MACARI",
+            "NUÑOA",
+            "ORURILLO",
+            "SANTA ROSA",
+            "UMACHIRI"
+          ]
+        },
+        {
+          "Ciudad": "MOHO",
+          "Distritos": [
+            "CONIMA",
+            "HUAYRAPATA",
+            "MOHO",
+            "TILALI"
+          ]
+        },
+        {
+          "Ciudad": "SAN ANTONIO DE PUTINA",
+          "Distritos": [
+            "ANANEA",
+            "PEDRO VILCA APAZA",
+            "PUTINA",
+            "QUILCAPUNCU",
+            "SINA"
+          ]
+        },
+        {
+          "Ciudad": "SAN ROMAN",
+          "Distritos": [
+            "CABANA",
+            "CABANILLAS",
+            "CARACOTO",
+            "JULIACA",
+            "SAN MIGUEL"
+          ]
+        },
+        {
+          "Ciudad": "SANDIA",
+          "Distritos": [
+            "ALTO INAMBARI",
+            "CUYOCUYO",
+            "LIMBANI",
+            "PATAMBUCO",
+            "PHARA",
+            "QUIACA",
+            "SAN JUAN DEL ORO",
+            "SAN PEDRO DE PUTINA PUNCO",
+            "SANDIA",
+            "YANAHUAYA"
+          ]
+        },
+        {
+          "Ciudad": "YUNGUYO",
+          "Distritos": [
+            "ANAPIA",
+            "COPANI",
+            "CUTURAPI",
+            "OLLARAYA",
+            "TINICACHI",
+            "UNICACHI",
+            "YUNGUYO"
+          ]
+        }
+      ]
+    },
+    {
+      "Departamento": "SAN MARTIN",
+      "Ciudades": [
+        {
+          "Ciudad": "BELLAVISTA",
+          "Distritos": [
+            "ALTO BIAVO",
+            "BAJO BIAVO",
+            "BELLAVISTA",
+            "HUALLAGA",
+            "SAN PABLO",
+            "SAN RAFAEL"
+          ]
+        },
+        {
+          "Ciudad": "EL DORADO",
+          "Distritos": [
+            "AGUA BLANCA",
+            "SAN JOSE DE SISA",
+            "SAN MARTIN",
+            "SANTA ROSA",
+            "SHATOJA"
+          ]
+        },
+        {
+          "Ciudad": "HUALLAGA",
+          "Distritos": [
+            "ALTO SAPOSOA",
+            "EL ESLABON",
+            "PISCOYACU",
+            "SACANCHE",
+            "SAPOSOA",
+            "TINGO DE SAPOSOA"
+          ]
+        },
+        {
+          "Ciudad": "LAMAS",
+          "Distritos": [
+            "ALONSO DE ALVARADO",
+            "BARRANQUITA",
+            "CAYNARACHI",
+            "CUÑUMBUQUI",
+            "LAMAS",
+            "PINTO RECODO",
+            "RUMISAPA",
+            "SAN ROQUE DE CUMBAZA",
+            "SHANAO",
+            "TABALOSOS",
+            "ZAPATERO"
+          ]
+        },
+        {
+          "Ciudad": "MARISCAL CACERES",
+          "Distritos": [
+            "CAMPANILLA",
+            "HUICUNGO",
+            "JUANJUI",
+            "PACHIZA",
+            "PAJARILLO"
+          ]
+        },
+        {
+          "Ciudad": "MOYOBAMBA",
+          "Distritos": [
+            "CALZADA",
+            "HABANA",
+            "JEPELACIO",
+            "MOYOBAMBA",
+            "SORITOR",
+            "YANTALO"
+          ]
+        },
+        {
+          "Ciudad": "PICOTA",
+          "Distritos": [
+            "BUENOS AIRES",
+            "CASPISAPA",
+            "PICOTA",
+            "PILLUANA",
+            "PUCACACA",
+            "SAN CRISTOBAL",
+            "SAN HILARION",
+            "SHAMBOYACU",
+            "TINGO DE PONASA",
+            "TRES UNIDOS"
+          ]
+        },
+        {
+          "Ciudad": "RIOJA",
+          "Distritos": [
+            "AWAJUN",
+            "ELIAS SOPLIN VARGAS",
+            "NUEVA CAJAMARCA",
+            "PARDO MIGUEL",
+            "POSIC",
+            "RIOJA",
+            "SAN FERNANDO",
+            "YORONGOS",
+            "YURACYACU"
+          ]
+        },
+        {
+          "Ciudad": "SAN MARTIN",
+          "Distritos": [
+            "ALBERTO LEVEAU",
+            "CACATACHI",
+            "CHAZUTA",
+            "CHIPURANA",
+            "EL PORVENIR",
+            "HUIMBAYOC",
+            "JUAN GUERRA",
+            "LA BANDA DE SHILCAYO",
+            "MORALES",
+            "PAPAPLAYA",
+            "SAN ANTONIO",
+            "SAUCE",
+            "SHAPAJA",
+            "TARAPOTO"
+          ]
+        },
+        {
+          "Ciudad": "TOCACHE",
+          "Distritos": [
+            "NUEVO PROGRESO",
+            "POLVORA",
+            "SHUNTE",
+            "TOCACHE",
+            "UCHIZA"
+          ]
+        }
+      ]
+    },
+    {
+      "Departamento": "TACNA",
+      "Ciudades": [
+        {
+          "Ciudad": "CANDARAVE",
+          "Distritos": [
+            "CAIRANI",
+            "CAMILACA",
+            "CANDARAVE",
+            "CURIBAYA",
+            "HUANUARA",
+            "QUILAHUANI"
+          ]
+        },
+        {
+          "Ciudad": "JORGE BASADRE",
+          "Distritos": [
+            "ILABAYA",
+            "ITE",
+            "LOCUMBA"
+          ]
+        },
+        {
+          "Ciudad": "TACNA",
+          "Distritos": [
+            "ALTO DE LA ALIANZA",
+            "CALANA",
+            "CIUDAD NUEVA",
+            "CORONEL GREGORIO ALBARRACIN LANCHIP",
+            "INCLAN",
+            "LA YARADA LOS PALOS",
+            "PACHIA",
+            "PALCA",
+            "POCOLLAY",
+            "SAMA",
+            "TACNA"
+          ]
+        },
+        {
+          "Ciudad": "TARATA",
+          "Distritos": [
+            "CHUCATAMANI",
+            "ESTIQUE",
+            "ESTIQUE-PAMPA",
+            "SITAJARA",
+            "SUSAPAYA",
+            "TARATA",
+            "TARUCACHI",
+            "TICACO"
+          ]
+        }
+      ]
+    },
+   {
+      "Departamento": "TUMBES",
+      "Ciudades": [
+        {
+          "Ciudad": "TUMBES",
+          "Distritos": [
+            "CORRALES",
+            "LA CRUZ",
+            "PAMPAS DE HOSPITAL",
+            "SAN JACINTO",
+            "SAN JUAN DE LA VIRGEN",
+            "TUMBES"
+          ]
+        },
+        {
+          "Ciudad": "CONTRALMIRANTE VILLAR",
+          "Distritos": [
+            "CANOAS DE PUNTA SAL",
+            "CASITAS",
+            "ZORRITOS"
+          ]
+        },
+        {
+          "Ciudad": "ZARUMILLA",
+          "Distritos": [
+            "AGUAS VERDES",
+            "MATAPALO",
+            "PAPAYAL",
+            "ZARUMILLA"
+          ]
+        }
+      ]
+    }
+  ]
+}

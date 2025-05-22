@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/style/nosotros.css';
-import Video from '../assets/video/jordan_historia.mp4'; // Importa el video si es necesario
+import Video from '../assets/video/jordan_historia.mp4';
 
 const Nosotros = () => {
   return (

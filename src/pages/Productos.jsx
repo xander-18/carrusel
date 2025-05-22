@@ -92,7 +92,6 @@ const Productos = ({ products: externalProducts }) => {
       release: "Edición especial 2025",
       features: "Sistema de amortiguación Air, soporte para el arco plantar mejorado, cordones reforzados"
     },
-    // Añadiendo productos de otras categorías para demostrar la funcionalidad de filtrado
     {
       id: 6,
       name: "Air Jordan 36",
@@ -147,31 +146,24 @@ const Productos = ({ products: externalProducts }) => {
   const [sortOrder, setSortOrder] = useState('popular');
   const [viewMode, setViewMode] = useState('grid');
   const [filteredProducts, setFilteredProducts] = useState([]);
-  
-  // Incorporar productos externos del localStorage si existen
+
   useEffect(() => {
     if (externalProducts && externalProducts.length > 0) {
-      // Combinar los productos predefinidos con los productos externos
       const allProducts = [...products];
-      
-      // Agregar solo los productos externos que no estén ya en la lista (por ID)
       externalProducts.forEach(extProduct => {
         if (!allProducts.some(p => p.id === extProduct.id)) {
           allProducts.push(extProduct);
         }
       });
-      
       setProducts(allProducts);
     }
-  }, [externalProducts]);
+  }, [externalProducts, products]);
 
-  // Manejar el filtrado de productos por categoría
   useEffect(() => {
     const applyFilters = () => {
       const filtered = activeCategory === 'all'
         ? products
         : products.filter(product => product.category === activeCategory);
-      
       const sorted = [...filtered].sort((a, b) => {
         switch(sortOrder) {
           case 'newest':
@@ -186,10 +178,8 @@ const Productos = ({ products: externalProducts }) => {
             return b.rating - a.rating;
         }
       });
-      
       setFilteredProducts(sorted);
     };
-    
     applyFilters();
   }, [activeCategory, sortOrder, products]);
 
@@ -205,7 +195,6 @@ const Productos = ({ products: externalProducts }) => {
     setViewMode(mode);
   };
 
-  // Componente de tarjeta de productos para cuando no se usa el carrusel
   const ProductCard = ({ product }) => (
     <div className="product-card">
       <div className="product-image">

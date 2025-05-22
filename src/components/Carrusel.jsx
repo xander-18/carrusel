@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
-import '../assets/style/productos.css';
+import { useEffect, useRef, useState } from 'react';
 import { FaInfoCircle } from 'react-icons/fa';
+import '../assets/style/productos.css';
 
 const Carousel = ({ products, addToCart }) => {
   const carouselRef = useRef(null);
@@ -8,7 +8,6 @@ const Carousel = ({ products, addToCart }) => {
   const [scrollSpeed, setScrollSpeed] = useState(0);
   const [isHoveringCarousel, setIsHoveringCarousel] = useState(false);
   const animationRef = useRef(null);
-  // Estado para controlar qué tarjeta está volteada
   const [flippedCard, setFlippedCard] = useState(null);
 
   useEffect(() => {
@@ -59,7 +58,7 @@ const Carousel = ({ products, addToCart }) => {
     if (flippedCard !== null) {
       timer = setTimeout(() => {
         setFlippedCard(null);
-      }, 5000); // 5 segundos para regresar automáticamente
+      }, 100000); // 5 segundos para regresar automáticamente
     }
     return () => {
       clearTimeout(timer);
@@ -75,9 +74,9 @@ const Carousel = ({ products, addToCart }) => {
     const edgeZone = width * 0.3;
 
     if (x < edgeZone) {
-      setScrollSpeed(-Math.ceil((edgeZone - x) / 20));
+      setScrollSpeed(-Math.ceil((edgeZone - x) / 80));
     } else if (x > width - edgeZone) {
-      setScrollSpeed(Math.ceil((x - (width - edgeZone)) / 20));
+      setScrollSpeed(Math.ceil((x - (width - edgeZone)) / 80));
     } else {
       setScrollSpeed(0);
     }
